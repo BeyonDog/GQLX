@@ -41,6 +41,12 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
+  m_ShowUnitySplashAds: 0
+  m_AdsAndroidGameId: 
+  m_AdsIosGameId: 
+  m_ShowSplashAdsSlogan: 0
+  m_SloganImage: {fileID: 0}
+  m_SloganHeight: 150
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -85,6 +91,11 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
+  autoStreaming: 0
+  useAnimationStreaming: 0
+  useFontStreaming: 0
+  autoStreamingId: 
+  instantGameAppId: 
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
@@ -741,7 +752,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -756,11 +773,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 32f4821c-615d-4f41-b2c7-e0a95e790ccc
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: GQLXTheGame
+  organizationId: beyondog
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
