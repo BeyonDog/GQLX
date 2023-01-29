@@ -9,12 +9,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerModel: MonoSingleton<PlayerModel>
 {
+
 
     public PlayerAttribute playerPower= new PlayerAttribute("ZY#0101", "力量值",4);//力量值
     public PlayerAttribute playeragile=new PlayerAttribute("ZY#0102", "敏捷值",4);//敏捷值
@@ -101,5 +100,6 @@ public class PlayerModel: MonoSingleton<PlayerModel>
         public int value;//值
         public Sprite icon;//图标icon
     }
+
 
 

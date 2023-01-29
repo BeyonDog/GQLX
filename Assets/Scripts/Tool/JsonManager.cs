@@ -25,6 +25,7 @@ public class JsonManager : MonoSingleton<JsonManager>
         PlayerModelInfoRoot playerModelInfoRoot = new PlayerModelInfoRoot();
         PlayerModelInfo modelInfo = new PlayerModelInfo();
         PlayerModelInfo modelInfo2 = new PlayerModelInfo();
+        PlayerModelInfo[] modelInfos = new PlayerModelInfo[5];
         modelInfo.playerAttributeinfo=PlayerModel.Instance.playerPower;
         modelInfo2.playerAttributeinfo=PlayerModel.Instance.playeragile;
         
