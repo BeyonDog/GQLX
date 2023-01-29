@@ -21,17 +21,4 @@ public static class EventHandler
     {
         GameEvent?.Invoke(gameEventID);
     }
-
-    /// <summary>
-    /// 游戏事件UI
-    /// </summary>
-    public static event Action<GameEventDetails> GameEventUI;
-    /// <summary>
-    /// 显示游戏事件UI
-    /// </summary>
-    /// <param name="gameEventDetails">游戏事件信息</param>
-    public static void CallGameEventUI(GameEventDetails gameEventDetails)
-    {
-        GameEventUI?.Invoke(gameEventDetails);
-    }
 }
