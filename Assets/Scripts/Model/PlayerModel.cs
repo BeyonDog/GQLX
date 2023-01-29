@@ -12,6 +12,9 @@ using UnityEngine;
 public class PlayerModel: BaseSingleton<PlayerModel>
 {
     public PlayerPower playerPower;
+    /// <summary>
+    /// 力量值
+    /// </summary>
     public class PlayerPower
     {
         public string ID = "ZY#0101";
@@ -20,7 +23,5 @@ public class PlayerModel: BaseSingleton<PlayerModel>
         public int type = 1;
     }
 }
-/// <summary>
-/// 力量值
-/// </summary>
+
 
