@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using GQLX.Game.Block;
+using GQLX.Game.Map;
+using UnityEngine.Tilemaps;
 
-namespace GQLX.Game
+namespace GQLX.Game.Map
 {
     /// <summary>
     /// Çø¿é
@@ -10,9 +11,24 @@ namespace GQLX.Game
     [System.Serializable]
     public class Chunk
     {
-        public BlockData[] blocks = new BlockData[256];
+        private Tilemap tilemap;
 
-        public void SetBlock(Vector2Int pos, BlockData block)
+        public Block.BlockData[] blocks = new Block.BlockData[256];
+
+        public Tilemap Tilemap
+        {
+            get
+            {
+                if(tilemap == null)
+                {
+                    tilemap = new Tilemap();
+                    // TODO: blocks to Tilemap
+                }
+                return tilemap;
+            }
+        }
+
+        public void SetBlock(Vector2Int pos, Block.BlockData block)
         {
             if(pos.x < 0 || pos.x > 15 || pos.y < 0 || pos.y > 15)
             {
@@ -24,7 +40,7 @@ namespace GQLX.Game
             Debug.Log($"Set Block \"{block.blockName}\" to {pos}");
         }
 
-        public BlockData GetBlockData(Vector2Int pos)
+        public Block.BlockData GetBlockData(Vector2Int pos)
         {
             return blocks[pos.y * 16 + pos.x];
         }

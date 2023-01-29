@@ -13,15 +13,8 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Range(1, 16), Tooltip("地图加载范围")]
+    public uint MapLoadRange = 8;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
