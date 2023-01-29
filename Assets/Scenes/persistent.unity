@@ -101325,10 +101325,12 @@ GameObject:
   - component: {fileID: 1096218682}
   - component: {fileID: 1096218691}
   - component: {fileID: 1096218684}
+  - component: {fileID: 1096218692}
   - component: {fileID: 1096218688}
   - component: {fileID: 1096218687}
   - component: {fileID: 1096218690}
   - component: {fileID: 1096218689}
+  - component: {fileID: 1096218693}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101539,6 +101541,30 @@ MonoBehaviour:
       SoundEffectController \n4\u3001\u4EBA\u7269\u79FB\u52A8\u63A7\u5236\u5668PlayerMoveController\n "
     textAreaObjectFields: []
     objectIdPairs: []
+--- !u!114 &1096218692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096218681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a679e792232a24a8f1f5a70ed876b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1096218693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096218681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589bfdb481c659a4a99e6ca2cbc89307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1285286333
 GameObject:
   m_ObjectHideFlags: 0
