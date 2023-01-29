@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace GQLX.Game.Map.Block
 {
     [System.Serializable]
-    public struct BlockData
+    public struct BlockDate
     {
         public string blockName;
         public int data;
 
-        public BlockData(string blockName, int data)
+        public BlockDate(string blockName, int data)
         {
             this.blockName = blockName;
             this.data = data;
@@ -43,5 +44,7 @@ namespace GQLX.Game.Map.Block
         {
             Debug.LogWarning($"Trigger with \"{GetType()}\", BUT YOU FORGET OVERRIDE \"Trigger()\"");
         }
+
+        public abstract Tile GetTile(int data);
     }
 }

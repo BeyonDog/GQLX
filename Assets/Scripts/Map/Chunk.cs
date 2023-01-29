@@ -11,26 +11,27 @@ namespace GQLX.Game.Map
     [System.Serializable]
     public class Chunk
     {
-        private Tilemap tilemap;
+        public Block.BlockDate[] blocks = new Block.BlockDate[256];
 
-        public Block.BlockData[] blocks = new Block.BlockData[256];
-
-        public Tilemap Tilemap
+        public void blocks2Tilemap(Tilemap tilemap)
         {
-            get
+            tilemap.size = new Vector3Int(16, 16, 0);
+            for (int i = 0; i < blocks.Length; i++)
             {
-                if(tilemap == null)
-                {
-                    tilemap = new Tilemap();
-                    // TODO: blocks to Tilemap
-                }
-                return tilemap;
+                tilemap.SetTile(
+                    new Vector3Int(i % 16, i / 16, 0),
+                    BlockManager.Instance.GetBlockInfo(blocks[i]).GetTile(blocks[i].data));
             }
         }
 
-        public void SetBlock(Vector2Int pos, Block.BlockData block)
+        public void TileMap2Blocks(Tilemap tilemap)
         {
-            if(pos.x < 0 || pos.x > 15 || pos.y < 0 || pos.y > 15)
+
+        }
+
+        public void SetBlock(Vector2Int pos, Block.BlockDate block)
+        {
+            if (pos.x < 0 || pos.x > 15 || pos.y < 0 || pos.y > 15)
             {
                 Debug.LogError($"Set Block \"{block.blockName}\" to {pos} Out of Range");
                 return;
@@ -39,8 +40,7 @@ namespace GQLX.Game.Map
             blocks[pos.y * 16 + pos.x] = block;
             Debug.Log($"Set Block \"{block.blockName}\" to {pos}");
         }
-
-        public Block.BlockData GetBlockData(Vector2Int pos)
+        public Block.BlockDate GetBlockData(Vector2Int pos)
         {
             return blocks[pos.y * 16 + pos.x];
         }
@@ -49,7 +49,6 @@ namespace GQLX.Game.Map
         {
             return JsonUtility.ToJson(this);
         }
-
         public static Chunk DeserializeChunk(string json)
         {
             return JsonUtility.FromJson<Chunk>(json);

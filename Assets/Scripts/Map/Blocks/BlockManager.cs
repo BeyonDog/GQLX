@@ -14,11 +14,11 @@ using UnityEngine;
 
 namespace GQLX.Game.Map
 {
-    public class BlockRegistrar : BaseSingleton<BlockRegistrar>
+    public class BlockManager : BaseSingleton<BlockManager>
     {
         Dictionary<string, Block.BlockAbstract> BlockDic = new();
 
-        public BlockRegistrar()
+        public BlockManager()
         {
             Type baseType = typeof(Block.BlockAbstract);
             // 遍历程序集中的所有类型，并将继承自BlockAbstract的类添加到BlockDic中
@@ -34,6 +34,54 @@ namespace GQLX.Game.Map
                 }
             }
             Debug.Log($"Total registed {BlockDic.Count} blocks");
+        }
+
+        public Block.BlockAbstract GetBlockInfo(Block.BlockDate date)
+        {
+            if (date.blockName != null && BlockDic.ContainsKey(date.blockName))
+            {
+                return BlockDic[date.blockName];
+            }
+            else
+            {
+                Debug.LogError($"Can not Get Block info \"{date.blockName}\"");
+                List<string> keys = new List<string>(BlockDic.Keys);
+                return BlockDic[keys[0]];
+            }
+        }
+    }
+
+    public class BlockSprineManager : BaseSingleton<BlockSprineManager>
+    {
+        Dictionary<string, Sprite> spriteDic = new();
+        string blockSpritesPath = "DelverTiles";
+
+        public BlockSprineManager()
+        {
+            Sprite[] sprites = Resources.LoadAll<Sprite>(blockSpritesPath);
+            if(sprites == null)
+            {
+                Debug.LogError($"Can not Find \"{blockSpritesPath}\"");
+            }
+            foreach(Sprite sprite in sprites)
+            {
+                spriteDic.Add(sprite.name, sprite);
+                // Debug.Log($"Registed Block Sprite\"{sprite.name}\"");
+            }
+            Debug.Log($"Total Registed {spriteDic.Count} block sprites");
+        }
+
+        public Sprite GetSprite(string spriteName)
+        {
+            if (spriteDic.ContainsKey(spriteName))
+            {
+                return spriteDic[spriteName];
+            }
+            else
+            {
+                Debug.LogError($"Can not find \"{spriteName}\" form \"{blockSpritesPath}\"");
+                return null;
+            }
         }
     }
 }
