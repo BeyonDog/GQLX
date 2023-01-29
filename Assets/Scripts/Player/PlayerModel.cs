@@ -5,80 +5,54 @@
  *  创建时间：2023-01-28 16:20:43
  *  版 本：1.0
  * =======================================================*/
-
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerModel: MonoSingleton<PlayerModel>
+public class PlayerModel: BaseSingleton<PlayerModel>
 {
-
-
-    public PlayerAttribute playerPower= new PlayerAttribute("ZY#0101", "力量值",4);//力量值
-    public PlayerAttribute playeragile=new PlayerAttribute("ZY#0102", "敏捷值",4);//敏捷值
-    public PlayerAttribute playerintelligence=new PlayerAttribute("ZY#0103", "智力值",4);//智力值
-    public PlayerAttribute playerlucky=new PlayerAttribute("ZY#0104", "幸运值",3);//幸运值
-    public PlayerAttribute playerhp=new PlayerAttribute("HP", "生命值",5);//生命值
-    public PlayerAttribute playerglobcoin=new PlayerAttribute("ZY#0109", "金币",0);//金币值 
     
-    public ItemAttribute powerSlice=new ItemAttribute("SP#0101","力量碎片",0);//力量碎片
-    public ItemAttribute agileSlice=new ItemAttribute("SP#0102","敏捷碎片",0);//敏捷碎片
-    public ItemAttribute intelligenceSlice=new ItemAttribute("SP#0103","智力碎片",0);//智力碎片
-    public ItemAttribute luckSlice=new ItemAttribute("SP#0104","幸运碎片",0);//幸运碎片 
-
-    public OtherAttribute headgear;//狼骨头套
-    public OtherAttribute statue;//雕像 
-    public OtherAttribute groupPhoto;//合影
-    public OtherAttribute key;//钥匙
+    public PlayerAttribute playerPower;//玩家力量值
     
-
-
-    void Start()
-    {
-        
-    }
-}
-/// <summary>
+    
+    
+    /// <summary>
     /// 玩家属性信息类
     /// </summary>
-[Serializable]
     public class PlayerAttribute :BaseGameAttribute
     {
-        public  PlayerAttribute(string id,string Name,int myvaluae)
+
+        public  PlayerAttribute(string id,string name)
         {
-            ID = id;
-            name = Name;
-            value = myvaluae;
+            
         }
     }
+
     /// <summary>
     /// 物品属性信息类
     /// </summary>
-    [Serializable]
     public class ItemAttribute :BaseGameAttribute
     {
 
-        public ItemAttribute(string id,string Name,int myvaluae)
+        public ItemAttribute(string id,string name)
         {
-            ID = id;
-            name = Name;
-            value = myvaluae;
+            
         }
     }
     /// <summary>
     /// 其他物品属性信息类
     /// </summary>
-    [Serializable]
     public class OtherAttribute : BaseGameAttribute
     {
         
-        public OtherAttribute(string id, string Name)
+        public OtherAttribute(string id, string name)
         {
             
         }
     }
-    [Serializable]
+
     public class BaseGameAttribute
     {
         public string ID; //ID
@@ -100,3 +74,6 @@ public class PlayerModel: MonoSingleton<PlayerModel>
         public int value;//值
         public Sprite icon;//图标icon
     }
+}
+
+
