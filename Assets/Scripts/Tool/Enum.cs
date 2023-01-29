@@ -8,7 +8,7 @@ using UnityEngine;
 
 public enum GameEventType
 {
-    敏捷事件, 智力事件, 力量事件, 幸运事件
+    随机事件,采集事件,主线事件
 }
 
 public enum OptionType

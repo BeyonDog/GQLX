@@ -11,8 +11,6 @@ using TMPro;
 // ========================================================
 public class GameEvent : MonoBehaviour
 {
-
-    public TextMeshProUGUI tmpUGUI;
     public GameEventDetails gameEventDetails;
     /// <summary>
     /// 判断该事件是否结束
@@ -35,13 +33,12 @@ public class GameEvent : MonoBehaviour
     {
         if (isEnd == false)
         {
-            tmpUGUI.text = gameEventDetails.text;
-
+            EventHandler.CallGameEventUI(gameEventDetails);
             isEnd = true;
         }
         else
         {
-            tmpUGUI.text = gameEventDetails.option[0].winText;
+            //继续显示结束的文本
         }
     }
 
