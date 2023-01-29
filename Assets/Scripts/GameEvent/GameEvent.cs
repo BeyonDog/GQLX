@@ -4,20 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// ========================================================
+// 脚 本 功 能:事件预制体脚本
+// 作 者： 红豆
+// 版 本：v 1.0
+// ========================================================
 public class GameEvent : MonoBehaviour
 {
+
     public TextMeshProUGUI tmpUGUI;
-    public int gameEventID;
-    /// <summary>
-    /// 文本
-    /// </summary>
-    [TextArea]
-    public string text;
-    /// <summary>
-    /// 结束后文本
-    /// </summary>
-    [TextArea]
-    public string textEnd;
+    public GameEventDetails gameEventDetails;
     /// <summary>
     /// 判断该事件是否结束
     /// </summary>
@@ -35,16 +31,17 @@ public class GameEvent : MonoBehaviour
     /// 人物移动触发事件时调用
     /// </summary>
     /// <param name="gameEventID">事件的ID</param>
-    private void OnGameEvent(int gameEventID)
+    private void OnGameEvent(string gameEventID)
     {
         if (isEnd == false)
         {
-            tmpUGUI.text = text;
+            tmpUGUI.text = gameEventDetails.text;
+
             isEnd = true;
         }
         else
         {
-            tmpUGUI.text = textEnd;
+            tmpUGUI.text = gameEventDetails.option[0].winText;
         }
     }
 
@@ -52,6 +49,6 @@ public class GameEvent : MonoBehaviour
     {
 
         if (other.tag == "Player")
-            EventHandler.CallGameEvent(gameEventID);
+            EventHandler.CallGameEvent(gameEventDetails.eventID);
     }
 }
