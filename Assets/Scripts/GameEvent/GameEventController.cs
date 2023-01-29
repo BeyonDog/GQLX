@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class GameEventController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // TODO:随机生成算法写在这里
 
-    // Update is called once per frame
-    void Update()
+    //测试：----------------
+    public GameEvent gameEvent;
+    public EventDetails_SO eventDetails;
+    private void Start()
     {
-        
+        gameEvent.gameEventDetails = eventDetails.gameEventDetails[0];
     }
+    //----------------------
 }
