@@ -13,25 +13,35 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class GameEventUIController : MonoBehaviour
+public class GameEventUIC : MonoBehaviour
 {
     public TextMeshProUGUI header;//事件标题文本
     public TextMeshProUGUI mainText;//主要文本
     public Button[] options;//事件选项按钮
+    public Button exitButton;//退出按钮
+
+    private GameEventDetails currentGED;//当前传入的游戏事件信息
 
     private Option[] currentOptions;//储存当前事件的选项
 
     private void OnEnable()
     {
         EventHandler.GameEventUI += OnGameEventUI;
+        EventHandler.GameEventEnd += OnGameEventEnd;
     }
     private void OnDisable()
     {
         EventHandler.GameEventUI -= OnGameEventUI;
+        EventHandler.GameEventEnd -= OnGameEventEnd;
     }
 
+    /// <summary>
+    /// UI开启后执行
+    /// </summary>
+    /// <param name="gameEventDetails">事件信息</param>
     private void OnGameEventUI(GameEventDetails gameEventDetails)
     {
+        currentGED = gameEventDetails;
         header.text = gameEventDetails.eventName;
         mainText.text = gameEventDetails.description;
 
@@ -43,6 +53,19 @@ public class GameEventUIController : MonoBehaviour
                 currentOptions = gameEventDetails.option;
             }
     }
+
+    /// <summary>
+    /// 事件结束后
+    /// </summary>
+    /// <param name="gameEventDetails"></param>
+    private void OnGameEventEnd(GameEventDetails gameEventDetails)
+    {
+        header.text = string.Empty;
+        mainText.text = string.Empty;
+        exitButton.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
     /// <summary>
     /// 每个按钮效果
     /// </summary>
@@ -54,11 +77,19 @@ public class GameEventUIController : MonoBehaviour
         {
             //力量判断
             //mainText = 成功或失败文本
+            //Call人物属性改变事件
         }
         mainText.text = "事件结束文本";
         for (int i = 0; i < 4; i++)
         {
             options[i].gameObject.SetActive(false);
         }
+        exitButton.gameObject.SetActive(true);
+    }
+
+    public void ExitButton()
+    {
+        EventHandler.CallGameEventEnd(currentGED);
+        exitButton.gameObject.SetActive(false);
     }
 }

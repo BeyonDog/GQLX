@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GameEventController : MonoBehaviour
+namespace GQLX.Game.GameEvent
 {
-    // TODO:随机生成算法写在这里
-
-    //测试：----------------
-    public GameEvent gameEvent;
-    public EventDetails_SO eventDetails;
-    private void Start()
+    public class GameEventController : MonoBehaviour
     {
-        gameEvent.gameEventDetails = eventDetails.gameEventDetails[0];
+        // TODO:随机生成算法写在这里
+
+        //测试：----------------
+        public GameEvent gameEvent;
+        public EventDetails_SO eventDetails;
+        private void Start()
+        {
+            gameEvent.gameEventDetails = eventDetails.gameEventDetails[0];
+        }
+        //----------------------
     }
-    //----------------------
 }
