@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 namespace GQLX.Game.Map
 {
     /// <summary>
-    /// Çø¿é
+    /// ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     [System.Serializable]
     public class Chunk

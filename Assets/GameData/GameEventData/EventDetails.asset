@@ -15,7 +15,8 @@ MonoBehaviour:
   gameEventDetails:
   - eventID: SJ#0101
     eventName: "\u7834\u65E7\u57CE\u5821"
-    text: "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA"
+    gameEventType: 0
+    description: "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA"
     option:
     - optionType: 0
       optionText: "\u649E\u5F00\u5927\u95E8"
@@ -32,12 +33,8 @@ MonoBehaviour:
       attributeValue: 5
       winText: "\u53D1\u73B0\u4E86\u5176\u4ED6\u5165\u53E3"
       deText: "\u4EC0\u4E48\u4E5F\u6CA1\u6709\u53D1\u751F"
-    - optionType: 3
-      optionText: 
-      attributeValue: 0
-      winText: 
-      deText: 
   - eventID: 
     eventName: 
-    text: 
+    gameEventType: 0
+    description: 
     option: []

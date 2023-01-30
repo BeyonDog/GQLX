@@ -8,7 +8,7 @@ using UnityEngine;
 // ========================================================
 
 /// <summary>
-/// 选项类型
+/// 事件数据
 /// </summary>
 [System.Serializable]
 public class GameEventDetails
@@ -17,12 +17,16 @@ public class GameEventDetails
     public string eventID;
     public string eventName;
     [Header("事件描述")]
+    public GameEventType gameEventType;
     [TextArea]
-    public string text;
+    public string description;
     [Header("选项")]
     public Option[] option;
 }
 
+/// <summary>
+/// 事件内选项
+/// </summary>
 [System.Serializable]
 public struct Option
 {

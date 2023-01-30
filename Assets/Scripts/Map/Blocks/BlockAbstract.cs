@@ -18,15 +18,15 @@ namespace GQLX.Game.Map.Block
 
     public abstract class BlockAbstract
     {
-        // ÉèÖÃ·½¿éµÄÄ¬ÈÏÊôÐÔ
-        public static bool passable = true; // ¿ÉÍ¨¹ýÐÔ
-        public static bool trigger = false; // ´¥·¢Æ÷
+        // ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        public static bool passable = true; // ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+        public static bool trigger = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
         /// <summary>
         /// <list type="table">
-        /// <item>µ±Íæ¼Ò°´ÏÂ»¥¶¯¼üÊ±´¥·¢</item>
-        /// <item>´ó²¿·ÖÇé¿öÏÂ¶¼²»»áÓÐ·´Ó¦£¬Òò´Ë»ùÀà×÷Îª´òlog</item>
-        /// <item>ÇëÎñ±Ø¼ÇµÃBase.Interact()ÒÔ·½±ãdebug</item>
+        /// <item>ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ï¿½Â»ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½</item>
+        /// <item>ï¿½ó²¿·ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½log</item>
+        /// <item>ï¿½ï¿½ï¿½ï¿½Ø¼Çµï¿½Base.Interact()ï¿½Ô·ï¿½ï¿½ï¿½debug</item>
         /// </list>
         /// </summary>
         public virtual void Interact()
@@ -36,8 +36,8 @@ namespace GQLX.Game.Map.Block
 
         /// <summary>
         /// <list type="table">
-        /// <item>·½¿éµÄTrigger=True,ÇÒµ±Íæ¼Ò½øÈë·½¿éÊ±´¥·¢</item>
-        /// <item>Çë¼ÇµÃÔÚTriggerÉèÖÃÎªTrueÊ±ÖØÔØ¸Ãº¯Êý</item>
+        /// <item>ï¿½ï¿½ï¿½ï¿½ï¿½Trigger=True,ï¿½Òµï¿½ï¿½ï¿½Ò½ï¿½ï¿½ë·½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½</item>
+        /// <item>ï¿½ï¿½Çµï¿½ï¿½ï¿½Triggerï¿½ï¿½ï¿½ï¿½ÎªTrueÊ±ï¿½ï¿½ï¿½Ø¸Ãºï¿½ï¿½ï¿½</item>
         /// </list>
         /// </summary>
         public virtual void Trigger()
