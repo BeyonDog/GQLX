@@ -8,7 +8,7 @@ using UnityEngine;
 
 public enum GameEventType
 {
-    随机事件,采集事件,主线事件
+    随机事件,采集事件,主线事件,神庙
 }
 
 public enum OptionType
