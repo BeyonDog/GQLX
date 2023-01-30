@@ -1,49 +1,51 @@
+using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 // ========================================================
-// 脚 本 功 能:随机事件脚本
+// 脚 本 功 能:事件预制体脚本
 // 作 者： 红豆
 // 版 本：v 1.0
 // ========================================================
-namespace GQLX.Game.GameEvent
+public class GameEvent : MonoBehaviour
 {
-    public class GameEvent : MonoBehaviour
+    public GameEventDetails gameEventDetails;
+    /// <summary>
+    /// 判断该事件是否结束
+    /// </summary>
+    private bool isEnd = false;
+    private void OnEnable()
     {
-        public GameEventDetails gameEventDetails;
-        /// <summary>
-        /// 判断该事件是否结束
-        /// </summary>
-        private bool isFind = false;//是否已发现
-        private bool isEnd = false;//是否结束（是否触发）
+        EventHandler.GameEvent += OnGameEvent;
+    }
 
-        private void OnEnable()
+    private void OnDisable()
+    {
+        EventHandler.GameEvent -= OnGameEvent;
+    }
+    /// <summary>
+    /// 人物移动触发事件时调用
+    /// </summary>
+    /// <param name="gameEventID">事件的ID</param>
+    private void OnGameEvent(string gameEventID)
+    {
+        if (isEnd == false)
         {
-            EventHandler.GameEvent += OnGameEvent;
-            EventHandler.GameEventEnd += OnGameEventEnd;
-        }
-
-        private void OnDisable()
-        {
-            EventHandler.GameEvent -= OnGameEvent;
-            EventHandler.GameEventEnd += OnGameEventEnd;
-        }
-
-        private void OnGameEventEnd(GameEventDetails gameEventDetails)
-        {
+            EventHandler.CallGameEventUI(gameEventDetails);
             isEnd = true;
         }
-
-        /// <summary>
-        /// 触发事件时调用
-        /// </summary>
-        /// <param name="gameEventID">事件的ID</param>
-        private void OnGameEvent(GameEventDetails gameEventDetails)
+        else
         {
-            //触发事件时调用
+            //继续显示结束的文本
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Player")
+            EventHandler.CallGameEvent(gameEventDetails.eventID);
     }
 }

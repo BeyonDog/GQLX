@@ -12,27 +12,14 @@ public static class EventHandler
     /// <summary>
     /// 游戏事件
     /// </summary>
-    public static event Action<GameEventDetails> GameEvent;
+    public static event Action<string> GameEvent;
     /// <summary>
     /// 触发游戏事件
     /// </summary>
     /// <param name="gameEventID">事件ID</param>
-    public static void CallGameEvent(GameEventDetails gameEventDetails)
+    public static void CallGameEvent(string gameEventID)
     {
-        GameEvent?.Invoke(gameEventDetails);
-    }
-
-    /// <summary>
-    /// 游戏事件结束
-    /// </summary>
-    public static event Action<GameEventDetails> GameEventEnd;
-    /// <summary>
-    /// 触发游戏事件
-    /// </summary>
-    /// <param name="gameEventID">事件ID</param>
-    public static void CallGameEventEnd(GameEventDetails gameEventDetails)
-    {
-        GameEventEnd?.Invoke(gameEventDetails);
+        GameEvent?.Invoke(gameEventID);
     }
 
     /// <summary>
@@ -40,12 +27,11 @@ public static class EventHandler
     /// </summary>
     public static event Action<GameEventDetails> GameEventUI;
     /// <summary>
-    /// 呼叫游戏事件UI
+    /// 显示游戏事件UI
     /// </summary>
-    /// <param name="gameEventDetails">事件ID</param>
+    /// <param name="gameEventDetails">游戏事件信息</param>
     public static void CallGameEventUI(GameEventDetails gameEventDetails)
     {
         GameEventUI?.Invoke(gameEventDetails);
     }
-
 }

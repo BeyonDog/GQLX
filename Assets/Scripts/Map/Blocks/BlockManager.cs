@@ -43,7 +43,7 @@ namespace GQLX.Game.Map
                 return BlockDic[date.blockName];
             }
             else
-            {//这行老报错，我先帮你注释掉了--by红豆
+            {//这行老报错，我先帮你注释掉了
                 // Debug.LogError($"Can not Get Block info \"{date.blockName}\"");
                 List<string> keys = new List<string>(BlockDic.Keys);
                 return BlockDic[keys[0]];

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*先写个移动用于测试，后面你们再改--by红豆*/
-public class PlayerMove : MonoBehaviour
+public class PlayerMoveController : MonoBehaviour
 {
 
     private float inputX, inputY;//移动的横纵偏移量
@@ -12,47 +12,18 @@ public class PlayerMove : MonoBehaviour
 
     public float speed = 5;//移速调整
 
-    private bool canControl = true;//能否操控
-
     private void Awake()
     {
         playerRigid = GetComponent<Rigidbody2D>();
     }
-    private void OnEnable()
-    {
-        EventHandler.GameEvent += OnGameEvent;
-        EventHandler.GameEventEnd += OnGameEventEnd;
-    }
-
-    private void OnDisable()
-    {
-        EventHandler.GameEvent -= OnGameEvent;
-        EventHandler.GameEventEnd += OnGameEventEnd;
-    }
-
-    /// <summary>
-    /// 触发事件时不可控制
-    /// </summary>
-    /// <param name="gameEventDetails"></param>
-    private void OnGameEvent(GameEventDetails gameEventDetails)
-    {
-        canControl = false;
-    }
-
-    private void OnGameEventEnd(GameEventDetails gameEventDetails)
-    {
-        canControl = true;
-    }
 
     private void Update()
     {
-        if (canControl)
-            PlayerInput();
+        PlayerInput();
     }
     private void FixedUpdate()
     {
-        if (canControl)
-            Movement();
+        Movement();
     }
     /// <summary>
     /// 根据键盘输入计算移动向量
