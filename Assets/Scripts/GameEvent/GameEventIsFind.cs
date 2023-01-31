@@ -17,7 +17,6 @@ namespace GQLX.Game.GameEvent
             if (other.tag == "Player")
             {
                 gameEvent.SetActive(true);
-                //TODO:播放动画和音效
             }
         }
     }

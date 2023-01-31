@@ -28,6 +28,7 @@ public class PlayerTrigger : MonoBehaviour
         {
             isEnterEvent = true;
             coll = other;
+            //TODO:播放动画和音效
         }
 
     }
