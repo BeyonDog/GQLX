@@ -7,13 +7,13 @@ namespace GQLX.Game.GameEvent
     {
         // TODO:随机生成算法写在这里
 
-        //测试：----------------
+        //测试：=============================
         public GameEvent gameEvent;
         public EventDetails_SO eventDetails;
-        private void Start()
+        private void Awake()
         {
             gameEvent.gameEventDetails = eventDetails.gameEventDetails[0];
         }
-        //----------------------
+        //===================================
     }
 }

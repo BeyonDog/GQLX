@@ -17,17 +17,20 @@ namespace GQLX.Game.GameEvent
         /// 判断该事件是否结束
         /// </summary>
         private bool isFind = false;//是否已发现
-        private bool isEnd = false;//是否结束（是否触发）
+        public bool isEnd = false;//是否结束（是否触发）
+
+        private void Start()
+        {
+            GetComponent<SpriteRenderer>().sprite = gameEventDetails.sprite;
+        }
 
         private void OnEnable()
         {
-            EventHandler.GameEvent += OnGameEvent;
             EventHandler.GameEventEnd += OnGameEventEnd;
         }
 
         private void OnDisable()
         {
-            EventHandler.GameEvent -= OnGameEvent;
             EventHandler.GameEventEnd += OnGameEventEnd;
         }
 
@@ -36,13 +39,13 @@ namespace GQLX.Game.GameEvent
             isEnd = true;
         }
 
-        /// <summary>
-        /// 触发事件时调用
-        /// </summary>
-        /// <param name="gameEventID">事件的ID</param>
-        private void OnGameEvent(GameEventDetails gameEventDetails)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            //触发事件时调用
+            if (other.tag == "Player")
+            {
+                //TODO:播放动画和音效
+            }
+
         }
 
     }

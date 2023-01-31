@@ -16,13 +16,36 @@ using UnityEngine.UI;
 public class GameEventUIC : MonoBehaviour
 {
     public TextMeshProUGUI header;//事件标题文本
+    public Image image;//事件示意图
     public TextMeshProUGUI mainText;//主要文本
     public Button[] options;//事件选项按钮
+    public GameObject[] highLights;//高亮列表
+    public Button sureButton;//确认按钮
+    int buttonIndex;//目前选中的按钮
     public Button exitButton;//退出按钮
 
     private GameEventDetails currentGED;//当前传入的游戏事件信息
 
     private Option[] currentOptions;//储存当前事件的选项
+    private string[] currentTexts;//储存当前事件的描述文本
+    int textIndex = 0;//当前文本页码
+    bool isTextend;//文本是否播放完成
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && isTextend == false)
+        {
+            if (textIndex >= currentTexts.Length - 1)
+            {
+                DisplayButton();
+            }
+            else
+            {//左键每戳一下，文本往后显示一页
+                textIndex++;
+                mainText.text = currentTexts[textIndex];
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -43,15 +66,12 @@ public class GameEventUIC : MonoBehaviour
     {
         currentGED = gameEventDetails;
         header.text = gameEventDetails.eventName;
-        mainText.text = gameEventDetails.description;
+        image.sprite = gameEventDetails.image;
+        currentTexts = gameEventDetails.description;
+        mainText.text = currentTexts[0];
+        isTextend = false;//正文播放开始
+        textIndex = 0;//页码归零
 
-        if (gameEventDetails.option.Length <= 4)
-            for (int i = 0; i < gameEventDetails.option.Length; i++)
-            {
-                options[i].gameObject.SetActive(true);
-                options[i].GetComponentInChildren<TextMeshProUGUI>().text = gameEventDetails.option[i].optionText;
-                currentOptions = gameEventDetails.option;
-            }
     }
 
     /// <summary>
@@ -67,10 +87,26 @@ public class GameEventUIC : MonoBehaviour
     }
 
     /// <summary>
-    /// 每个按钮效果
+    /// 循环开启所需按钮并填入文本
+    /// </summary>
+    void DisplayButton()
+    {
+        if (currentGED.option.Length <= 4)
+            for (int i = 0; i < currentGED.option.Length; i++)
+            {
+                options[i].gameObject.SetActive(true);
+                options[i].GetComponentInChildren<TextMeshProUGUI>().text = currentGED.option[i].optionText;
+                currentOptions = currentGED.option;
+            }
+
+        isTextend = true;//正文播放结束
+    }
+
+    /// <summary>
+    /// 点击确认后的操作
     /// </summary>
     /// <param name="optionType">选项类型</param>
-    public void ButtonOption(int buttonIndex)
+    public void ButtonOption()
     {
         //TODO:每个选项的功能，效果，文本
         if (currentOptions[buttonIndex].optionType == OptionType.力量选项)
@@ -79,12 +115,28 @@ public class GameEventUIC : MonoBehaviour
             //mainText = 成功或失败文本
             //Call人物属性改变事件
         }
-        mainText.text = "事件结束文本";
+        //循环关闭所有按钮
         for (int i = 0; i < 4; i++)
         {
             options[i].gameObject.SetActive(false);
         }
         exitButton.gameObject.SetActive(true);
+
+        mainText.text = "嗷呜，好舒服~";
+    }
+
+    /// <summary>
+    /// 按钮点击后的操作
+    /// </summary>
+    /// <param name="buttonIndex"></param>
+    public void ButtonSelect(int index)
+    {
+        buttonIndex = index;
+        foreach (var highLight in highLights)
+        {
+            highLight.SetActive(false);
+        }
+        highLights[buttonIndex].SetActive(true);
     }
 
     public void ExitButton()

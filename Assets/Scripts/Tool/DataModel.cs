@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // ========================================================
@@ -19,7 +20,10 @@ public class GameEventDetails
     [Header("事件描述")]
     public GameEventType gameEventType;
     [TextArea]
-    public string description;
+    public string[] description;
+    [Header("材质和图片")]
+    public Sprite sprite;
+    public Sprite image;
     [Header("选项")]
     public Option[] option;
 }

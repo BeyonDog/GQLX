@@ -12,32 +12,33 @@ using GQLX.Game.GameEvent;
 
 public class PlayerTrigger : MonoBehaviour
 {
-    bool isEnterEvent;
-    Collider2D coll;
+    GameEvent currentGameEvent;
     void Update()
     {
-        if (isEnterEvent && Input.GetKeyDown(KeyCode.J))
-        {
-            EventHandler.CallGameEvent(coll.GetComponent<GameEvent>().gameEventDetails);
-        }
+        if (currentGameEvent != null)
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                // if (currentGameEvent.isEnd == false)
+                    EventHandler.CallGameEvent(currentGameEvent.gameEventDetails);
+                // else
+                // {
+                //     //结束后文本
+                // }
+            }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "GameEvent")
-        {
-            isEnterEvent = true;
-            coll = other;
-            //TODO:播放动画和音效
-        }
+            currentGameEvent = other.GetComponent<GameEvent>();
 
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "GameEvent")
-        {
-            isEnterEvent = false;
-            coll = null;
-        }
+            currentGameEvent = null;
+
+
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 // ========================================================
@@ -9,6 +7,7 @@ using System;
 // ========================================================
 public static class EventHandler
 {
+
     /// <summary>
     /// 游戏事件
     /// </summary>
@@ -27,7 +26,7 @@ public static class EventHandler
     /// </summary>
     public static event Action<GameEventDetails> GameEventEnd;
     /// <summary>
-    /// 触发游戏事件
+    /// 呼叫游戏事件结束
     /// </summary>
     /// <param name="gameEventID">事件ID</param>
     public static void CallGameEventEnd(GameEventDetails gameEventDetails)
