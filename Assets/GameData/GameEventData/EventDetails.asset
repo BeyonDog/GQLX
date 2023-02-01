@@ -32,8 +32,8 @@ MonoBehaviour:
       deText: 
     - optionType: 1
       optionText: "\u6478\u6478\u767D\u5B50\u7684\u4E0B\u5DF4"
-      attributeValue: 0
-      winText: 
+      attributeValue: 4
+      winText: "\u767D\u5B50\u8E6D\u4E86\u8E6D\u4F60"
       deText: "\u88AB\u767D\u5B50\u54AC\u4E86\uFF0C\u7559\u4E0B\u4E86\u4E00\u6392\u72FC\u7259\u5370\u8BB0"
     - optionType: 2
       optionText: "\u6478\u6478\u767D\u5B50\u7684\u5934"

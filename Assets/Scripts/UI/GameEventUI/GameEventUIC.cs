@@ -21,8 +21,8 @@ public class GameEventUIC : MonoBehaviour
     public Button[] options;//事件选项按钮
     public GameObject[] highLights;//高亮列表
     public Button sureButton;//确认按钮
-    int buttonIndex;//目前选中的按钮
     public Button exitButton;//退出按钮
+    int buttonIndex = -1;//目前选中的按钮
 
     private GameEventDetails currentGED;//当前传入的游戏事件信息
 
@@ -71,7 +71,6 @@ public class GameEventUIC : MonoBehaviour
         mainText.text = currentTexts[0];
         isTextend = false;//正文播放开始
         textIndex = 0;//页码归零
-
     }
 
     /// <summary>
@@ -98,7 +97,10 @@ public class GameEventUIC : MonoBehaviour
                 options[i].GetComponentInChildren<TextMeshProUGUI>().text = currentGED.option[i].optionText;
                 currentOptions = currentGED.option;
             }
-
+        sureButton.gameObject.SetActive(true);//顺便开启确认按钮
+        //这里把确认按钮变灰,且不可用
+        sureButton.image.color = Color.gray;
+        sureButton.enabled = false;
         isTextend = true;//正文播放结束
     }
 
@@ -108,13 +110,7 @@ public class GameEventUIC : MonoBehaviour
     /// <param name="optionType">选项类型</param>
     public void ButtonOption()
     {
-        //TODO:每个选项的功能，效果，文本
-        if (currentOptions[buttonIndex].optionType == OptionType.力量选项)
-        {
-            //力量判断
-            //mainText = 成功或失败文本
-            //Call人物属性改变事件
-        }
+
         //循环关闭所有按钮
         for (int i = 0; i < 4; i++)
         {
@@ -122,26 +118,93 @@ public class GameEventUIC : MonoBehaviour
         }
         exitButton.gameObject.SetActive(true);
 
-        mainText.text = "嗷呜，好舒服~";
+        mainText.text = AttrJudge();//属性判断并赋值到文本区
+
+        buttonIndex = -1;//按钮指针置空
+        //这里把确认按钮变灰,且不可用
+        sureButton.image.color = Color.gray;
+        sureButton.enabled = false;
     }
 
     /// <summary>
     /// 按钮点击后的操作
     /// </summary>
-    /// <param name="buttonIndex"></param>
+    /// <param name="index">按钮编号</param>
     public void ButtonSelect(int index)
     {
-        buttonIndex = index;
-        foreach (var highLight in highLights)
+        if (buttonIndex == index)//判断传进来的是否是点击过的按钮编号
         {
-            highLight.SetActive(false);
+            buttonIndex = -1;//重复点击，指针置空
+            //把确认按钮变为不可用
+            sureButton.image.color = Color.gray;
+            sureButton.enabled = false;
         }
-        highLights[buttonIndex].SetActive(true);
+        else
+        {
+            buttonIndex = index;
+
+            foreach (var highLight in highLights)
+            {
+                highLight.SetActive(false);
+            }
+            if (buttonIndex >= 0)
+                highLights[buttonIndex].SetActive(true);
+            //这里把确认按钮变亮
+            sureButton.image.color = Color.white;
+            sureButton.enabled = true;
+        }
     }
 
     public void ExitButton()
     {
         EventHandler.CallGameEventEnd(currentGED);
         exitButton.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 点击确认后的属性值判断
+    /// </summary>
+    /// <returns></returns>
+    string AttrJudge()
+    {
+        int playerAttr = -1;//当前所需判断属性
+        int needAttr = -1;//当前考验值
+        float odd = 0;
+        int lucky = PlayerModel.Instance.playerLucky.value;//当前幸运
+        int luckyRate = PlayerModel.Instance.luckyRate;//幸运除率
+        //获取当前按钮编号所代表的选项,其里面的属性考验值
+        if (buttonIndex >= 0)
+            needAttr = currentGED.option[buttonIndex].attributeValue;
+        //获取玩家当前需要参加考验的属性值
+        switch (currentOptions[buttonIndex].optionType)
+        {
+            case OptionType.力量选项:
+                playerAttr = PlayerModel.Instance.playerPower.value;
+                break;
+            case OptionType.敏捷选项:
+                playerAttr = PlayerModel.Instance.playerAgile.value;
+                break;
+            case OptionType.智力选项:
+                playerAttr = PlayerModel.Instance.playerIntelligence.value;
+                break;
+            case OptionType.幸运选项:
+                playerAttr = lucky;
+                break;
+        }
+        //判断是否成功
+        if (((playerAttr + needAttr) - (lucky / luckyRate)) <= 0)
+            odd = 1;
+        else
+            odd = (float)playerAttr / ((playerAttr + needAttr) - (lucky / luckyRate));
+
+        if (odd >= Random.value)
+        {//成功
+         //TODO:触发成功与失败事件
+            return currentGED.option[buttonIndex].winText;
+        }
+        else
+        {//失败
+            return currentGED.option[buttonIndex].deText;
+        }
     }
 }

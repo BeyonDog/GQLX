@@ -13,10 +13,11 @@ namespace GQLX.Game.GameEvent
     public class GameEvent : MonoBehaviour
     {
         public GameEventDetails gameEventDetails;
+
         /// <summary>
-        /// 判断该事件是否结束
+        /// 判断该事件是否已被找到
         /// </summary>
-        private bool isFind = false;//是否已发现
+        private bool isFind = false;
         public bool isEnd = false;//是否结束（是否触发）
 
         private void Start()

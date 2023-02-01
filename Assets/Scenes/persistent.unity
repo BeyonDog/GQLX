@@ -101006,6 +101006,7 @@ GameObject:
   - component: {fileID: 1096218684}
   - component: {fileID: 1096218688}
   - component: {fileID: 1096218692}
+  - component: {fileID: 1096218693}
   - component: {fileID: 1096218687}
   - component: {fileID: 1096218690}
   - component: {fileID: 1096218689}
@@ -101231,6 +101232,285 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905c486932c33894db47b695bde35ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1096218693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096218681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a679e792232a24a8f1f5a70ed876b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPower:
+    ID: ZY#0101
+    name: "\u529B\u91CF\u503C"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 4
+    icon: {fileID: 0}
+  playerAgile:
+    ID: ZY#0102
+    name: "\u654F\u6377\u503C"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 4
+    icon: {fileID: 0}
+  playerIntelligence:
+    ID: ZY#0103
+    name: "\u667A\u529B\u503C"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 4
+    icon: {fileID: 0}
+  playerLucky:
+    ID: ZY#0104
+    name: "\u5E78\u8FD0\u503C"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 3
+    icon: {fileID: 0}
+  playerHp:
+    ID: HP
+    name: "\u751F\u547D\u503C"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 5
+    icon: {fileID: 0}
+  playerGlobcoin:
+    ID: ZY#0109
+    name: "\u91D1\u5E01"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  powerSlice:
+    ID: SP#0101
+    name: "\u529B\u91CF\u788E\u7247"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  agileSlice:
+    ID: SP#0102
+    name: "\u654F\u6377\u788E\u7247"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  intelligenceSlice:
+    ID: SP#0103
+    name: "\u667A\u529B\u788E\u7247"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  luckSlice:
+    ID: SP#0104
+    name: "\u5E78\u8FD0\u788E\u7247"
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  headgear:
+    ID: 
+    name: 
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  statue:
+    ID: 
+    name: 
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  groupPhoto:
+    ID: 
+    name: 
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  key:
+    ID: 
+    name: 
+    remarks: 
+    type: 0
+    describe: 
+    picture: {fileID: 0}
+    isDrop: 0
+    weightDrop: 0
+    dropQuantity: 0
+    isBuy: 0
+    putOnWeight: 0
+    salesQuantity: 0
+    coinPrice: 0
+    slicePrice: 0
+    addAttribute: 
+    conversionRatio: 0
+    value: 0
+    icon: {fileID: 0}
+  luckyRate: 4
 --- !u!1 &1285286333
 GameObject:
   m_ObjectHideFlags: 0
