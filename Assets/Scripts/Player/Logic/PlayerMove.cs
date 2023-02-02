@@ -20,26 +20,26 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventHandler.GameEvent += OnGameEvent;
+        EventHandler.GameEventUI += OnGameEventUI;
         EventHandler.GameEventEnd += OnGameEventEnd;
     }
 
     private void OnDisable()
     {
-        EventHandler.GameEvent -= OnGameEvent;
-        EventHandler.GameEventEnd += OnGameEventEnd;
+        EventHandler.GameEventUI -= OnGameEventUI;
+        EventHandler.GameEventEnd -= OnGameEventEnd;
     }
 
     /// <summary>
     /// 触发事件时不可控制
     /// </summary>
     /// <param name="gameEventDetails"></param>
-    private void OnGameEvent(GameEventDetails gameEventDetails)
+    private void OnGameEventUI(string gameEventID)
     {
         canControl = false;
     }
 
-    private void OnGameEventEnd(GameEventDetails gameEventDetails)
+    private void OnGameEventEnd(string endText)
     {
         canControl = true;
     }

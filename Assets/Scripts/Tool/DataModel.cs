@@ -39,12 +39,12 @@ public struct Option
     public string optionText;
     [Header("所需属性值")]
     public int attributeValue;
-    [Header("胜利事件与文本")]
-    public string winEventID;
+    [Header("胜利文本与事件")]
     public string winText;
-    [Header("失败事件与文本")]
-    public string deEventID;
+    public string winEventID;
+    [Header("失败文本与事件")]
     public string deText;
+    public string deEventID;
 }
 
 /// <summary>

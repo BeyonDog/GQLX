@@ -19,7 +19,7 @@ public class PlayerModel : MonoSingleton<PlayerModel>
     public PlayerAttribute playerIntelligence = new PlayerAttribute("ZY#0103", "智力值", 4);//智力值
     public PlayerAttribute playerLucky = new PlayerAttribute("ZY#0104", "幸运值", 3);//幸运值
     public PlayerAttribute playerHp = new PlayerAttribute("HP", "生命值", 5);//生命值
-    public PlayerAttribute playerGlobcoin = new PlayerAttribute("ZY#0109", "金币", 0);//金币值 
+    public PlayerAttribute playerGoldcoin = new PlayerAttribute("ZY#0109", "金币", 0);//金币值 
 
     public ItemAttribute powerSlice = new ItemAttribute("SP#0101", "力量碎片", 0);//力量碎片
     public ItemAttribute agileSlice = new ItemAttribute("SP#0102", "敏捷碎片", 0);//敏捷碎片

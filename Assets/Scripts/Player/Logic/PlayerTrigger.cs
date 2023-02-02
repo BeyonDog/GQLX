@@ -13,18 +13,40 @@ using GQLX.Game.GameEvent;
 public class PlayerTrigger : MonoBehaviour
 {
     GameEvent currentGameEvent;
+    public GameObject gameEventUI;
+
+    private void OnEnable()
+    {
+        EventHandler.GameEventEnd += OnGameEventEnd;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.GameEventEnd -= OnGameEventEnd;
+    }
+
     void Update()
     {
-        if (currentGameEvent != null)
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                // if (currentGameEvent.isEnd == false)
-                    EventHandler.CallGameEvent(currentGameEvent.gameEventDetails);
-                // else
-                // {
-                //     //结束后文本
-                // }
-            }
+        if (Input.GetKeyDown(KeyCode.J))
+            if (currentGameEvent != null)
+                if (currentGameEvent.isEnd == false)
+                {
+                    gameEventUI.SetActive(true);
+                    EventHandler.CallGameEventUI(currentGameEvent.gameEventID);
+                }
+                else
+                {
+                    //对已结束事件的触发
+                    gameEventUI.SetActive(true);
+                    EventHandler.CallGameEventAgain(currentGameEvent.endText);
+                }
+
+    }
+
+    private void OnGameEventEnd(string end)
+    {
+        currentGameEvent.isEnd = true;
+        currentGameEvent.endText = end;//只改当前对象的
     }
 
     private void OnTriggerEnter2D(Collider2D other)

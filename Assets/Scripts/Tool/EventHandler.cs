@@ -7,44 +7,56 @@ using System;
 // ========================================================
 public static class EventHandler
 {
-
     /// <summary>
-    /// 游戏事件
+    /// 游戏事件UI
     /// </summary>
-    public static event Action<GameEventDetails> GameEvent;
+    public static event Action<string> GameEventUI;
     /// <summary>
-    /// 触发游戏事件
+    /// 呼叫游戏事件UI
     /// </summary>
-    /// <param name="gameEventID">事件ID</param>
-    public static void CallGameEvent(GameEventDetails gameEventDetails)
+    /// <param name="gameEventDetails">事件ID</param>
+    public static void CallGameEventUI(string gameEventID)
     {
-        GameEvent?.Invoke(gameEventDetails);
+        GameEventUI?.Invoke(gameEventID);
     }
 
     /// <summary>
     /// 游戏事件结束
     /// </summary>
-    public static event Action<GameEventDetails> GameEventEnd;
+    public static event Action<string> GameEventEnd;
     /// <summary>
     /// 呼叫游戏事件结束
     /// </summary>
-    /// <param name="gameEventID">事件ID</param>
-    public static void CallGameEventEnd(GameEventDetails gameEventDetails)
+    /// <param name="endText">事件ID</param>
+    public static void CallGameEventEnd(string endText)
     {
-        GameEventEnd?.Invoke(gameEventDetails);
+        GameEventEnd?.Invoke(endText);
     }
 
     /// <summary>
-    /// 游戏事件UI
+    /// 结束后事件
     /// </summary>
-    public static event Action<GameEventDetails> GameEventUI;
+    public static event Action<string> GameEventAgain;
     /// <summary>
-    /// 呼叫游戏事件UI
+    /// 触发结束后事件
     /// </summary>
-    /// <param name="gameEventDetails">事件ID</param>
-    public static void CallGameEventUI(GameEventDetails gameEventDetails)
+    /// <param name="endText"></param>
+    public static void CallGameEventAgain(string endText)
     {
-        GameEventUI?.Invoke(gameEventDetails);
+        GameEventAgain?.Invoke(endText);
+    }
+    /// <summary>
+    /// 事件最终的改变
+    /// </summary>
+    public static event Action<string, int[]> ChangeEvent;
+    /// <summary>
+    /// 触发事件最终的改变
+    /// </summary>
+    /// <param name="newEventID"></param>
+    /// <param name="changeAmounts"></param>
+    public static void CallChangeEvent(string newEventID, int[] changeAmounts)
+    {
+        ChangeEvent?.Invoke(newEventID, changeAmounts);
     }
 
 }

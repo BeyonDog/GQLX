@@ -3,7 +3,7 @@ using System.Diagnostics.Tracing;
  *  Unity版本：2021.3.16f1c1
 
  *  作 者：红豆
- *  主要功能：游戏事件的UI显示
+ *  主要功能：游戏事件的UI控制与核心判断逻辑
 
  *  创建时间：2023-01-29 16:03:36
  *  版 本：1.0
@@ -14,7 +14,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class GameEventUIC : MonoBehaviour
+public class GameEventUICore : MonoBehaviour
 {
     public EventDetails_SO gameEventList;
     public ResultEvent_SO resultEventList;
@@ -70,23 +70,31 @@ public class GameEventUIC : MonoBehaviour
     {
         EventHandler.GameEventUI += OnGameEventUI;
         EventHandler.GameEventEnd += OnGameEventEnd;
+        EventHandler.GameEventAgain += OnGameEventAgain;
     }
     private void OnDisable()
     {
         EventHandler.GameEventUI -= OnGameEventUI;
         EventHandler.GameEventEnd -= OnGameEventEnd;
+        EventHandler.GameEventAgain -= OnGameEventAgain;
+    }
+
+    private void OnGameEventAgain(string endText)
+    {
+        exitButton.gameObject.SetActive(true);
+        mainText.text = endText;
     }
 
     /// <summary>
     /// UI开启后执行
     /// </summary>
-    /// <param name="gameEventDetails">事件信息</param>
-    private void OnGameEventUI(GameEventDetails gameEventDetails)
+    /// <param name="gameEventID">事件信息</param>
+    private void OnGameEventUI(string gameEventID)
     {
-        currentGED = gameEventDetails;
-        header.text = gameEventDetails.eventName;
-        image.sprite = gameEventDetails.image;
-        currentTexts = gameEventDetails.description;
+        currentGED = gameEventDict[gameEventID];
+        header.text = currentGED.eventName;
+        image.sprite = currentGED.image;
+        currentTexts = currentGED.description;
         mainText.text = currentTexts[0];
         isTextend = false;//正文播放开始
         textIndex = 0;//页码归零
@@ -95,8 +103,8 @@ public class GameEventUIC : MonoBehaviour
     /// <summary>
     /// 事件结束后
     /// </summary>
-    /// <param name="gameEventDetails"></param>
-    private void OnGameEventEnd(GameEventDetails gameEventDetails)
+    /// <param name="endText"></param>
+    private void OnGameEventEnd(string endText)
     {
         header.text = string.Empty;
         mainText.text = string.Empty;
@@ -179,12 +187,6 @@ public class GameEventUIC : MonoBehaviour
         }
     }
 
-    public void ExitButton()
-    {
-        EventHandler.CallGameEventEnd(currentGED);
-        exitButton.gameObject.SetActive(false);
-    }
-
     /// <summary>
     /// 点击确认后的属性值判断
     /// </summary>
@@ -196,9 +198,10 @@ public class GameEventUIC : MonoBehaviour
         float odd = 0;
         int lucky = PlayerModel.Instance.playerLucky.value;//当前幸运
         int luckyRate = PlayerModel.Instance.luckyRate;//幸运除率
+        Option currentOption = currentGED.option[buttonIndex];
         //获取当前按钮编号所代表的选项,其里面的属性考验值
         if (buttonIndex >= 0)
-            needAttr = currentGED.option[buttonIndex].attributeValue;
+            needAttr = currentOption.attributeValue;
         //获取玩家当前需要参加考验的属性值
         switch (currentOptions[buttonIndex].optionType)
         {
@@ -226,14 +229,26 @@ public class GameEventUIC : MonoBehaviour
         if (odd >= Random.value)
         {//成功
          //TODO:触发成功与失败事件
-            resultEvent = resultEventDict[currentGED.option[buttonIndex].winEventID];
-            Debug.Log(resultEvent + "成功");
+            resultEvent = resultEventDict[currentOption.winEventID];
+            // Debug.Log(resultEvent + "成功");
         }
         else
         {//失败
-            resultEvent = resultEventDict[currentGED.option[buttonIndex].deEventID];
-            Debug.Log(resultEvent + "失败");
+            resultEvent = resultEventDict[currentOption.deEventID];
+            // Debug.Log(resultEvent + "失败");
         }
+        //启动结算事件
+        EventHandler.CallChangeEvent(resultEvent.generateID, resultEvent.changeAmounts);
+        //返回结算文本
         return resultEvent.text;
+    }
+
+    /// <summary>
+    /// 点击退出按钮后
+    /// </summary>
+    public void ExitButton()
+    {
+        EventHandler.CallGameEventEnd(mainText.text);//把当前文本作为最终文本传递回事件中心
+        exitButton.gameObject.SetActive(false);
     }
 }

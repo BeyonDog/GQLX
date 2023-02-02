@@ -12,33 +12,17 @@ namespace GQLX.Game.GameEvent
 {
     public class GameEvent : MonoBehaviour
     {
-        public GameEventDetails gameEventDetails;
+        public string gameEventID;
+        public string endText;
 
         /// <summary>
         /// 判断该事件是否已被找到
         /// </summary>
-        private bool isFind = false;
-        public bool isEnd = false;//是否结束（是否触发）
-
-        private void Start()
-        {
-            GetComponent<SpriteRenderer>().sprite = gameEventDetails.sprite;
-        }
-
-        private void OnEnable()
-        {
-            EventHandler.GameEventEnd += OnGameEventEnd;
-        }
-
-        private void OnDisable()
-        {
-            EventHandler.GameEventEnd += OnGameEventEnd;
-        }
-
-        private void OnGameEventEnd(GameEventDetails gameEventDetails)
-        {
-            isEnd = true;
-        }
+        public bool isFind = false;
+        /// <summary>
+        /// 是否结束（是否触发）
+        /// </summary>
+        public bool isEnd = false;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
