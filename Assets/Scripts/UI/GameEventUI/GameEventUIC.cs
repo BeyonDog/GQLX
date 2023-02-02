@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 /* =======================================================
  *  Unity版本：2021.3.16f1c1
 
@@ -15,6 +16,11 @@ using UnityEngine.UI;
 
 public class GameEventUIC : MonoBehaviour
 {
+    public EventDetails_SO gameEventList;
+    public ResultEvent_SO resultEventList;
+    Dictionary<string, GameEventDetails> gameEventDict = new Dictionary<string, GameEventDetails>();
+    Dictionary<string, ResultEvent> resultEventDict = new Dictionary<string, ResultEvent>();
+
     public TextMeshProUGUI header;//事件标题文本
     public Image image;//事件示意图
     public TextMeshProUGUI mainText;//主要文本
@@ -30,6 +36,19 @@ public class GameEventUIC : MonoBehaviour
     private string[] currentTexts;//储存当前事件的描述文本
     int textIndex = 0;//当前文本页码
     bool isTextend;//文本是否播放完成
+
+    private void Awake()
+    {
+        //初始化字典
+        foreach (var gameEvent in gameEventList.gameEventDetails)
+        {
+            gameEventDict.Add(gameEvent.eventID, gameEvent);
+        }
+        foreach (var resultEvent in resultEventList.resultEvents)
+        {
+            resultEventDict.Add(resultEvent.ID, resultEvent);
+        }
+    }
 
     private void Update()
     {
@@ -112,9 +131,14 @@ public class GameEventUIC : MonoBehaviour
     {
 
         //循环关闭所有按钮
-        for (int i = 0; i < 4; i++)
+        foreach (var option in options)
         {
-            options[i].gameObject.SetActive(false);
+            option.gameObject.SetActive(false);
+        }
+        //循环关闭所有高亮
+        foreach (var highLight in highLights)
+        {
+            highLight.SetActive(false);
         }
         exitButton.gameObject.SetActive(true);
 
@@ -191,20 +215,25 @@ public class GameEventUIC : MonoBehaviour
                 playerAttr = lucky;
                 break;
         }
-        //判断是否成功
+        //计算成功率
         if (((playerAttr + needAttr) - (lucky / luckyRate)) <= 0)
             odd = 1;
         else
             odd = (float)playerAttr / ((playerAttr + needAttr) - (lucky / luckyRate));
-
+        // Debug.Log(odd);
+        //判断是否成功
+        ResultEvent resultEvent;
         if (odd >= Random.value)
         {//成功
          //TODO:触发成功与失败事件
-            return currentGED.option[buttonIndex].winText;
+            resultEvent = resultEventDict[currentGED.option[buttonIndex].winEventID];
+            Debug.Log(resultEvent + "成功");
         }
         else
         {//失败
-            return currentGED.option[buttonIndex].deText;
+            resultEvent = resultEventDict[currentGED.option[buttonIndex].deEventID];
+            Debug.Log(resultEvent + "失败");
         }
+        return resultEvent.text;
     }
 }

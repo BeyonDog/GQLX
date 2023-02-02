@@ -13,6 +13,35 @@ MonoBehaviour:
   m_Name: EventDetails
   m_EditorClassIdentifier: 
   gameEventDetails:
+  - eventID: SJ#0101
+    eventName: "\u7834\u65E7\u57CE\u5821"
+    gameEventType: 0
+    description:
+    - "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA\u3002"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u649E\u5F00\u5927\u95E8"
+      attributeValue: 5
+      winEventID: 0101
+      winText: "\u649E\u5F00\u4E86\u5927\u95E8"
+      deEventID: 0102
+      deText: "\u626D\u4F24\u4E86\u624B"
+    - optionType: 1
+      optionText: "\u5C1D\u8BD5\u5F00\u9501"
+      attributeValue: 6
+      winEventID: 0101
+      winText: "\u6253\u5F00\u4E86\u5927\u95E8"
+      deEventID: 0103
+      deText: "\u54CD\u52A8\u5F15\u6765\u4E86\u602A\u7269"
+    - optionType: 2
+      optionText: "\u89C2\u5BDF\u56DB\u5468"
+      attributeValue: 5
+      winEventID: 0104
+      winText: "\u53D1\u73B0\u4E86\u5176\u4ED6\u5165\u53E3"
+      deEventID: 0105
+      deText: "\u4EC0\u4E48\u4E5F\u6CA1\u6709\u53D1\u751F"
   - eventID: "\u767D\u5B50"
     eventName: "\u662F\u767D\u5B50\u54E6\uFF01"
     gameEventType: 0
@@ -28,42 +57,28 @@ MonoBehaviour:
     - optionType: 0
       optionText: "\u62B1\u62B1\u767D\u5B50"
       attributeValue: 0
+      winEventID: 
       winText: 
+      deEventID: 
       deText: 
     - optionType: 1
       optionText: "\u6478\u6478\u767D\u5B50\u7684\u4E0B\u5DF4"
       attributeValue: 4
+      winEventID: 
       winText: "\u767D\u5B50\u8E6D\u4E86\u8E6D\u4F60"
+      deEventID: 
       deText: "\u88AB\u767D\u5B50\u54AC\u4E86\uFF0C\u7559\u4E0B\u4E86\u4E00\u6392\u72FC\u7259\u5370\u8BB0"
     - optionType: 2
       optionText: "\u6478\u6478\u767D\u5B50\u7684\u5934"
       attributeValue: 0
+      winEventID: 
       winText: "\u611F\u89C9\u5145\u6EE1\u4E86\u667A\u6167"
+      deEventID: 
       deText: 
     - optionType: 3
       optionText: "\u63C9\u63C9\u767D\u5B50"
       attributeValue: 0
+      winEventID: 
       winText: 
+      deEventID: 
       deText: 
-  - eventID: SJ#0101
-    eventName: "\u7834\u65E7\u57CE\u5821"
-    gameEventType: 0
-    description: []
-    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
-    image: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
-    option:
-    - optionType: 0
-      optionText: "\u649E\u5F00\u5927\u95E8"
-      attributeValue: 5
-      winText: "\u649E\u5F00\u4E86\u5927\u95E8"
-      deText: "\u626D\u4F24\u4E86\u624B"
-    - optionType: 1
-      optionText: "\u5C1D\u8BD5\u5F00\u9501"
-      attributeValue: 6
-      winText: "\u6253\u5F00\u4E86\u5927\u95E8"
-      deText: "\u54CD\u52A8\u5F15\u6765\u4E86\u602A\u7269"
-    - optionType: 2
-      optionText: "\u89C2\u5BDF\u56DB\u5468"
-      attributeValue: 5
-      winText: "\u53D1\u73B0\u4E86\u5176\u4ED6\u5165\u53E3"
-      deText: "\u4EC0\u4E48\u4E5F\u6CA1\u6709\u53D1\u751F"
