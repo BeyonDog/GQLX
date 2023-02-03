@@ -1,4 +1,4 @@
-/* =======================================================
+ /* =======================================================
  *  Unity版本：2021.3.16f1c1
  *  作 者：熊熊 
  *  主要功能：玩家信息存储类
@@ -86,11 +86,11 @@ public class BaseGameAttribute
     public int isDrop;//可否掉落 0是false 1是true
     public int weightDrop;//掉落权重 
     public int dropQuantity;//掉落数量
-    public int isBuy;//是否可购买 
+    public int isBuy;//是否可购买 0是false 1是true
     public int putOnWeight;//上架权重
     public int salesQuantity;//售卖数量
-    public float coinPrice;//金币售价
-    public float slicePrice;//碎片售价
+    public int coinPrice;//金币售价
+    public int slicePrice;//碎片售价
     public string addAttribute;//添加属性 
     public int conversionRatio;//折合比例
     public int value;//值

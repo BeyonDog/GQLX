@@ -34,6 +34,7 @@ public class JsonManager : MonoSingleton<JsonManager>
         playerModelInfoRoot.playerAttributeinfos.Add(modelInfo);
         playerModelInfoRoot.playerAttributeinfos.Add(modelInfo2);
         
+        
         var vbasePath = Path.Combine(Application.streamingAssetsPath, "Config");
         DirectoryInfo dir = new DirectoryInfo(vbasePath);
         if (!dir.Exists)
