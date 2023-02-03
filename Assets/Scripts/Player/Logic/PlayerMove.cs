@@ -32,7 +32,7 @@ public class PlayerMove : MonoBehaviour
         EventHandler.GameEventEnd -= OnGameEventEnd;
     }
 
-    private void OnGameEventAgain(string arg1, Sprite arg2)
+    private void OnGameEventAgain(string arg0, string arg1, Sprite arg2)
     {
         canControl = false;
     }
@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         canControl = false;
     }
 
-    private void OnGameEventEnd(string endText, Sprite endSprite)
+    private void OnGameEventEnd(string endHeader, string endText, Sprite endSprite)
     {
         canControl = true;
     }

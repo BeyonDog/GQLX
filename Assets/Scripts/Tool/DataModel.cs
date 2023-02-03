@@ -19,7 +19,6 @@ public class GameEventDetails
     public string eventID;
     public string eventName;
     [Header("事件描述")]
-    public GameEventType gameEventType;
     [TextArea]
     public string[] description;
     [Header("材质和图片")]

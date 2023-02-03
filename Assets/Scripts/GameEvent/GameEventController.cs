@@ -40,10 +40,10 @@ namespace GQLX.Game.GameEvent
             {
                 GameObject newEvent = Instantiate(eventPrefab, new Vector3(10, 5, 0), new Quaternion(0, 0, 0, 0), this.transform);
 
-
                 newEvent.GetComponentInChildren<GameEventIsFind>().FoundEvent();
                 newEvent.GetComponentInChildren<GameEvent>().gameEventID = gameEventDict[newEventID].eventID;
                 newEvent.GetComponentInChildren<SpriteRenderer>().sprite = gameEventDict[newEventID].sprite;
+                //TODO:生成后播放提示音效
             }
         }
 

@@ -38,14 +38,15 @@ public class PlayerTrigger : MonoBehaviour
                 {
                     //对已结束事件的触发
                     gameEventUI.SetActive(true);
-                    EventHandler.CallGameEventAgain(currentGameEvent.endText, currentGameEvent.endSprite);
+                    EventHandler.CallGameEventAgain(currentGameEvent.endHeader, currentGameEvent.endText, currentGameEvent.endSprite);
                 }
 
     }
 
-    private void OnGameEventEnd(string end, Sprite endSprite)
+    private void OnGameEventEnd(string endHeader, string end, Sprite endSprite)
     {
         currentGameEvent.isEnd = true;
+        currentGameEvent.endHeader = endHeader;//结束标题
         currentGameEvent.endText = end;//当前对象的结束文本
         currentGameEvent.endSprite = endSprite;//结束图片
     }

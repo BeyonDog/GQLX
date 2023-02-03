@@ -13,6 +13,7 @@ namespace GQLX.Game.GameEvent
     public class GameEvent : MonoBehaviour
     {
         public string gameEventID;
+        public string endHeader;
         public string endText;
         public Sprite endSprite;
 

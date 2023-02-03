@@ -78,8 +78,9 @@ public class GameEventUICore : MonoBehaviour
         EventHandler.GameEventAgain -= OnGameEventAgain;
     }
 
-    private void OnGameEventAgain(string endText, Sprite endSprite)
+    private void OnGameEventAgain(string endHeader, string endText, Sprite endSprite)
     {
+        header.text = endHeader;
         image.sprite = endSprite;
         mainText.text = endText;
         exitButton.gameObject.SetActive(true);
@@ -104,7 +105,7 @@ public class GameEventUICore : MonoBehaviour
     /// 事件结束后
     /// </summary>
     /// <param name="endText"></param>
-    private void OnGameEventEnd(string endText, Sprite endSprite)
+    private void OnGameEventEnd(string endHeader, string endText, Sprite endSprite)
     {
         header.text = string.Empty;
         mainText.text = string.Empty;
@@ -229,7 +230,6 @@ public class GameEventUICore : MonoBehaviour
         ResultEvent resultEvent;
         if (odd >= Random.value)
         {//成功
-         //TODO:触发成功与失败事件
             resultEvent = resultEventDict[currentOption.winEventID];
             // Debug.Log(resultEvent + "成功");
         }
@@ -239,7 +239,6 @@ public class GameEventUICore : MonoBehaviour
             // Debug.Log(resultEvent + "失败");
         }
         //启动结算事件
-        Debug.Log(resultEvent.generateID);
         EventHandler.CallChangeEvent(resultEvent.generateID, resultEvent.changeAmounts);
         //返回结算文本
         return resultEvent.text;
@@ -251,7 +250,7 @@ public class GameEventUICore : MonoBehaviour
     public void ExitButton()
     {
         //把当前文本和图片作为最终文本传递回事件中心（目前还未做结束图片功能，暂时传原图片）
-        EventHandler.CallGameEventEnd(mainText.text, image.sprite);
+        EventHandler.CallGameEventEnd(header.text, mainText.text, image.sprite);
         exitButton.gameObject.SetActive(false);
     }
 }

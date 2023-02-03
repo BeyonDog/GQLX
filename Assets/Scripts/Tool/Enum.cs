@@ -6,11 +6,6 @@ using UnityEngine;
 // 版 本：v 1.0
 // ========================================================
 
-public enum GameEventType
-{
-    随机事件, 被刷出事件, 采集事件, 主线事件, 神庙
-}
-
 public enum OptionType
 {
     力量选项, 敏捷选项, 智力选项, 幸运选项

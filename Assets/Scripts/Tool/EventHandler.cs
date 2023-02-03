@@ -23,27 +23,27 @@ public static class EventHandler
     /// <summary>
     /// 游戏事件结束
     /// </summary>
-    public static event Action<string, Sprite> GameEventEnd;
+    public static event Action<string, string, Sprite> GameEventEnd;
     /// <summary>
     /// 呼叫游戏事件结束
     /// </summary>
     /// <param name="endText">事件ID</param>
-    public static void CallGameEventEnd(string endText, Sprite endSprite)
+    public static void CallGameEventEnd(string endHeader, string endText, Sprite endSprite)
     {
-        GameEventEnd?.Invoke(endText, endSprite);
+        GameEventEnd?.Invoke(endHeader, endText, endSprite);
     }
 
     /// <summary>
     /// 结束后事件
     /// </summary>
-    public static event Action<string, Sprite> GameEventAgain;
+    public static event Action<string, string, Sprite> GameEventAgain;
     /// <summary>
     /// 触发结束后事件
     /// </summary>
     /// <param name="endText"></param>
-    public static void CallGameEventAgain(string endText, Sprite sprite)
+    public static void CallGameEventAgain(string endHeader, string endText, Sprite endSprite)
     {
-        GameEventAgain?.Invoke(endText, sprite);
+        GameEventAgain?.Invoke(endHeader, endText, endSprite);
     }
     /// <summary>
     /// 事件最终的改变
