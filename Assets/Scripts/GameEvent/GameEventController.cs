@@ -36,7 +36,7 @@ namespace GQLX.Game.GameEvent
 
         private void OnChangeEvent(string newEventID, int[] arg2)
         {
-            if (newEventID != null)
+            if (newEventID != string.Empty)
             {
                 GameObject newEvent = Instantiate(eventPrefab, new Vector3(10, 5, 0), new Quaternion(0, 0, 0, 0), this.transform);
 

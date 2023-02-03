@@ -21,13 +21,20 @@ public class PlayerMove : MonoBehaviour
     private void OnEnable()
     {
         EventHandler.GameEventUI += OnGameEventUI;
+        EventHandler.GameEventAgain += OnGameEventAgain;
         EventHandler.GameEventEnd += OnGameEventEnd;
     }
 
     private void OnDisable()
     {
         EventHandler.GameEventUI -= OnGameEventUI;
+        EventHandler.GameEventAgain -= OnGameEventAgain;
         EventHandler.GameEventEnd -= OnGameEventEnd;
+    }
+
+    private void OnGameEventAgain(string arg1, Sprite arg2)
+    {
+        canControl = false;
     }
 
     /// <summary>
@@ -39,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         canControl = false;
     }
 
-    private void OnGameEventEnd(string endText)
+    private void OnGameEventEnd(string endText, Sprite endSprite)
     {
         canControl = true;
     }

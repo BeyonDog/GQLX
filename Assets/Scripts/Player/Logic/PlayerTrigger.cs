@@ -38,15 +38,16 @@ public class PlayerTrigger : MonoBehaviour
                 {
                     //对已结束事件的触发
                     gameEventUI.SetActive(true);
-                    EventHandler.CallGameEventAgain(currentGameEvent.endText);
+                    EventHandler.CallGameEventAgain(currentGameEvent.endText, currentGameEvent.endSprite);
                 }
 
     }
 
-    private void OnGameEventEnd(string end)
+    private void OnGameEventEnd(string end, Sprite endSprite)
     {
         currentGameEvent.isEnd = true;
-        currentGameEvent.endText = end;//只改当前对象的
+        currentGameEvent.endText = end;//当前对象的结束文本
+        currentGameEvent.endSprite = endSprite;//结束图片
     }
 
     private void OnTriggerEnter2D(Collider2D other)

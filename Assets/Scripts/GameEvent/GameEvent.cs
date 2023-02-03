@@ -14,6 +14,7 @@ namespace GQLX.Game.GameEvent
     {
         public string gameEventID;
         public string endText;
+        public Sprite endSprite;
 
         /// <summary>
         /// 判断该事件是否已被找到
@@ -23,7 +24,6 @@ namespace GQLX.Game.GameEvent
         /// 是否结束（是否触发）
         /// </summary>
         public bool isEnd = false;
-
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")

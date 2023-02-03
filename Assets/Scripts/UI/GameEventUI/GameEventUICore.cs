@@ -1,4 +1,3 @@
-using System.Diagnostics.Tracing;
 /* =======================================================
  *  Unity版本：2021.3.16f1c1
 
@@ -21,9 +20,9 @@ public class GameEventUICore : MonoBehaviour
     Dictionary<string, GameEventDetails> gameEventDict = new Dictionary<string, GameEventDetails>();
     Dictionary<string, ResultEvent> resultEventDict = new Dictionary<string, ResultEvent>();
 
-    public TextMeshProUGUI header;//事件标题文本
+    public Text header;//事件标题文本
     public Image image;//事件示意图
-    public TextMeshProUGUI mainText;//主要文本
+    public Text mainText;//主要文本
     public Button[] options;//事件选项按钮
     public GameObject[] highLights;//高亮列表
     public Button sureButton;//确认按钮
@@ -79,10 +78,11 @@ public class GameEventUICore : MonoBehaviour
         EventHandler.GameEventAgain -= OnGameEventAgain;
     }
 
-    private void OnGameEventAgain(string endText)
+    private void OnGameEventAgain(string endText, Sprite endSprite)
     {
-        exitButton.gameObject.SetActive(true);
+        image.sprite = endSprite;
         mainText.text = endText;
+        exitButton.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -104,10 +104,11 @@ public class GameEventUICore : MonoBehaviour
     /// 事件结束后
     /// </summary>
     /// <param name="endText"></param>
-    private void OnGameEventEnd(string endText)
+    private void OnGameEventEnd(string endText, Sprite endSprite)
     {
         header.text = string.Empty;
         mainText.text = string.Empty;
+        currentGED = null;
         exitButton.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
@@ -121,7 +122,7 @@ public class GameEventUICore : MonoBehaviour
             for (int i = 0; i < currentGED.option.Length; i++)
             {
                 options[i].gameObject.SetActive(true);
-                options[i].GetComponentInChildren<TextMeshProUGUI>().text = currentGED.option[i].optionText;
+                options[i].GetComponentInChildren<Text>().text = currentGED.option[i].optionText;
                 currentOptions = currentGED.option;
             }
         sureButton.gameObject.SetActive(true);//顺便开启确认按钮
@@ -238,6 +239,7 @@ public class GameEventUICore : MonoBehaviour
             // Debug.Log(resultEvent + "失败");
         }
         //启动结算事件
+        Debug.Log(resultEvent.generateID);
         EventHandler.CallChangeEvent(resultEvent.generateID, resultEvent.changeAmounts);
         //返回结算文本
         return resultEvent.text;
@@ -248,7 +250,8 @@ public class GameEventUICore : MonoBehaviour
     /// </summary>
     public void ExitButton()
     {
-        EventHandler.CallGameEventEnd(mainText.text);//把当前文本作为最终文本传递回事件中心
+        //把当前文本和图片作为最终文本传递回事件中心（目前还未做结束图片功能，暂时传原图片）
+        EventHandler.CallGameEventEnd(mainText.text, image.sprite);
         exitButton.gameObject.SetActive(false);
     }
 }
