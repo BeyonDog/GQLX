@@ -15,13 +15,12 @@ MonoBehaviour:
   gameEventDetails:
   - eventID: SJ#0101
     eventName: "\u7834\u65E7\u57CE\u5821"
-    gameEventType: 0
     description:
     - "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA\u3002"
     sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
     image: {fileID: -454015765, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
     option:
-    - optionType: 0
+    - optionType: 2
       optionText: "\u649E\u5F00\u5927\u95E8"
       attributeValue: 5
       winText: "\u649E\u5F00\u4E86\u5927\u95E8"
@@ -44,7 +43,6 @@ MonoBehaviour:
       deEventID: 0105
   - eventID: SJ#0102
     eventName: "\u77FF\u5751"
-    gameEventType: 1
     description:
     - "\u4F60\u8FDB\u5165\u4E86\u4E00\u5EA7\u5E9F\u5F03\u7684\u77FF\u5751\uFF0C\u4F60\u6CBF\u7740\u873F\u8712\u72ED\u7A84\u7684\u77FF\u9053\u4E00\u8DEF\u6DF1\u5165\u5730\u4E0B\u3002"
     - "\u7A81\u7136\uFF0C\u5927\u5730\u5F00\u59CB\u4E0D\u4F4F\u5730\u98A4\u6296\uFF0C\u4F34\u968F\u9707\u8033\u6B32\u804B\u7684\u8F70\u9E23\u3002"
@@ -77,7 +75,6 @@ MonoBehaviour:
       deEventID: 0206
   - eventID: "\u767D\u5B50"
     eventName: "\u662F\u767D\u5B50\u54E6\uFF01"
-    gameEventType: 0
     description:
     - "\u767D\u5B50\u51FA\u73B0\u4E86\uFF01"
     - "\u767D\u5B50\u8868\u793A\u6233\u5DE6\u952E\u7FFB\u9875\u529F\u80FD\u5DF2\u7ECF\u5B9E\u73B0\u4E86\uFF01"
