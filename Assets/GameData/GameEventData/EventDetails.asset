@@ -16,25 +16,102 @@ MonoBehaviour:
   - eventID: SJ#0101
     eventName: "\u7834\u65E7\u57CE\u5821"
     gameEventType: 0
-    description: "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA"
+    description:
+    - "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA\u3002"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: -454015765, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
     option:
     - optionType: 0
       optionText: "\u649E\u5F00\u5927\u95E8"
       attributeValue: 5
       winText: "\u649E\u5F00\u4E86\u5927\u95E8"
+      winEventID: 0101
       deText: "\u626D\u4F24\u4E86\u624B"
+      deEventID: 0102
     - optionType: 1
       optionText: "\u5C1D\u8BD5\u5F00\u9501"
       attributeValue: 6
       winText: "\u6253\u5F00\u4E86\u5927\u95E8"
+      winEventID: 0101
       deText: "\u54CD\u52A8\u5F15\u6765\u4E86\u602A\u7269"
+      deEventID: 0103
     - optionType: 2
       optionText: "\u89C2\u5BDF\u56DB\u5468"
       attributeValue: 5
       winText: "\u53D1\u73B0\u4E86\u5176\u4ED6\u5165\u53E3"
+      winEventID: 0104
       deText: "\u4EC0\u4E48\u4E5F\u6CA1\u6709\u53D1\u751F"
-  - eventID: 
-    eventName: 
+      deEventID: 0105
+  - eventID: SJ#0102
+    eventName: "\u77FF\u5751"
+    gameEventType: 1
+    description:
+    - "\u4F60\u8FDB\u5165\u4E86\u4E00\u5EA7\u5E9F\u5F03\u7684\u77FF\u5751\uFF0C\u4F60\u6CBF\u7740\u873F\u8712\u72ED\u7A84\u7684\u77FF\u9053\u4E00\u8DEF\u6DF1\u5165\u5730\u4E0B\u3002"
+    - "\u7A81\u7136\uFF0C\u5927\u5730\u5F00\u59CB\u4E0D\u4F4F\u5730\u98A4\u6296\uFF0C\u4F34\u968F\u9707\u8033\u6B32\u804B\u7684\u8F70\u9E23\u3002"
+    - "\u4F60\u770B\u89C1\u80CC\u540E\u6709\u4E00\u5757\u5DE8\u77F3\u6B63\u6CBF\u7740\u6765\u65F6\u7684\u671D\u4F60\u98DE\u5FEB\u6EDA\u6765\u3002"
+    - "\u4F60\u4E00\u8DEF\u5411\u524D\u72C2\u5954\uFF0C\u4E07\u5E78\uFF0C\u5728\u4F53\u529B\u5FEB\u8981\u900F\u652F\u4E4B\u524D\uFF0C\u5DE8\u77F3\u88AB\u9010\u6E10\u53D8\u7A84\u7684\u77FF\u9053\u5361\u4F4F\u4E86\uFF0C\u4E0D\u518D\u524D\u8FDB\u3002"
+    - "\u4F46\u6B64\u65F6\uFF0C\u4F60\u4E5F\u5DF2\u7ECF\u8D70\u5230\u4E86\u77FF\u9053\u7684\u5C3D\u5934\uFF0C\u800C\u80CC\u540E\u7684\u9000\u8DEF\u4E5F\u88AB\u5DE8\u77F3\u5835\u4F4F\u4E86"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 562877770, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u63A8\u5F00\u5DE8\u77F3"
+      attributeValue: 6
+      winText: "\u77F3\u5934\u88AB\u63A8\u5F00\u4E86"
+      winEventID: 0201
+      deText: "\u5DE8\u77F3\u7EB9\u4E1D\u4E0D\u52A8"
+      deEventID: 0202
+    - optionType: 1
+      optionText: "\u4ECE\u7F1D\u9699\u94BB\u8FC7"
+      attributeValue: 5
+      winText: "\u901A\u8FC7\u4E86\u7F1D\u9699"
+      winEventID: 0203
+      deText: "\u64E6\u4F24\u4E86\u624B\u81C2"
+      deEventID: 0204
+    - optionType: 2
+      optionText: "\u7528\u6760\u6746\u539F\u7406"
+      attributeValue: 5
+      winText: "\u64AC\u5F00\u4E86\u5DE8\u77F3"
+      winEventID: 0206
+      deText: "\u6760\u6746\u65AD\u4E86"
+      deEventID: 0206
+  - eventID: "\u767D\u5B50"
+    eventName: "\u662F\u767D\u5B50\u54E6\uFF01"
     gameEventType: 0
-    description: 
-    option: []
+    description:
+    - "\u767D\u5B50\u51FA\u73B0\u4E86\uFF01"
+    - "\u767D\u5B50\u8868\u793A\u6233\u5DE6\u952E\u7FFB\u9875\u529F\u80FD\u5DF2\u7ECF\u5B9E\u73B0\u4E86\uFF01"
+    - "\u8FD9\u662F\u7B2C\u4E09\u9875\u54E6\uFF01"
+    - "sensei\uFF0C\u665A\u4E0A\u597D~"
+    - "\u90A3\u4E48\uFF0C\u4F60\u8981\u5BF9\u767D\u5B50\u505A\u4EC0\u4E48\u5462\uFF1F"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u62B1\u62B1\u767D\u5B50"
+      attributeValue: 0
+      winText: 
+      winEventID: 
+      deText: 
+      deEventID: 
+    - optionType: 1
+      optionText: "\u6478\u6478\u767D\u5B50\u7684\u4E0B\u5DF4"
+      attributeValue: 4
+      winText: "\u767D\u5B50\u8E6D\u4E86\u8E6D\u4F60"
+      winEventID: 
+      deText: "\u88AB\u767D\u5B50\u54AC\u4E86\uFF0C\u7559\u4E0B\u4E86\u4E00\u6392\u72FC\u7259\u5370\u8BB0"
+      deEventID: 
+    - optionType: 2
+      optionText: "\u6478\u6478\u767D\u5B50\u7684\u5934"
+      attributeValue: 0
+      winText: "\u611F\u89C9\u5145\u6EE1\u4E86\u667A\u6167"
+      winEventID: 
+      deText: 
+      deEventID: 
+    - optionType: 3
+      optionText: "\u63C9\u63C9\u767D\u5B50"
+      attributeValue: 0
+      winText: 
+      winEventID: 
+      deText: 
+      deEventID: 

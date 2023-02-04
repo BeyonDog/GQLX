@@ -36,12 +36,13 @@ public class JsonManager : MonoSingleton<JsonManager>
         PlayerModelInfo modelInfo2 = new PlayerModelInfo();
         PlayerModelInfo[] modelInfos = new PlayerModelInfo[5];
         modelInfo.playerAttributeinfo=PlayerModel.Instance.playerPower;
-        modelInfo2.playerAttributeinfo=PlayerModel.Instance.playeragile;
+        modelInfo2.playerAttributeinfo=PlayerModel.Instance.playerAgile;
         
         // modelInfos[0].playerAttributeinfo = PlayerModel.Instance.playerPower;
         // modelInfos[1].playerAttributeinfo = PlayerModel.Instance.playeragile;
         playerModelInfoRoot.playerAttributeinfos.Add(modelInfo);
         playerModelInfoRoot.playerAttributeinfos.Add(modelInfo2);
+        
         
         var vbasePath = Path.Combine(Application.streamingAssetsPath, "Config");
         DirectoryInfo dir = new DirectoryInfo(vbasePath);
