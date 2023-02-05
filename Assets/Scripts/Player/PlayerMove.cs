@@ -2,7 +2,7 @@
  *  Unity版本：2021.3.16f1c1
 
  *  作 者：朗朗
- *  主要功能：人物走格子式移动
+ *  主要功能：人物走格子式移动,控制人物动画
 
  *  创建时间：2023-02-05 17:12:51
  *  版 本：1.0
@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     public LayerMask whatStopsMovement;
     private Rigidbody2D rb;
     // Start is called before the first frame update
+    public Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AnimationController();
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
         if(Vector3.Distance(transform.position,movePoint.position) <= 0.4f)
         {
@@ -59,5 +61,16 @@ public class PlayerMove : MonoBehaviour
         //movex = Input.GetAxisRaw("Horizontal");
         //movey = Input.GetAxisRaw("Vertical");
         //moveDirection = new Vector2(movex, movey).normalized;
+    }
+    private void AnimationController()
+    {
+        if(Input.GetAxisRaw("Vertical") == 1)
+        {
+            anim.SetFloat("ToporDown", 1f);
+        }
+        if(Input.GetAxisRaw("Vertical") == -1)
+        {
+            anim.SetFloat("ToporDown", -1f);
+        }
     }
 }
