@@ -49,6 +49,9 @@ TagManager:
   - name: Plants
     uniqueID: 1237930103
     locked: 0
+  - name: MainEvent
+    uniqueID: 1572400689
+    locked: 0
   - name: Event
     uniqueID: 3069151021
     locked: 0
