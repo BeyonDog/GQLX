@@ -66,7 +66,7 @@ public class ShopManager : MonoBehaviour
         {
             if (PlayerModel.Instance.playerGoldcoin.value > saleitem.coinPrice && saleitem.value>0)
             {
-                PlayerModel.Instance.playerGoldcoin.value -= saleitem.coinPrice;
+                PlayerModel.Instance.playerGoldcoin.value -= (int)saleitem.coinPrice;
                 switch (saleitem.ID)
                 {
                     
