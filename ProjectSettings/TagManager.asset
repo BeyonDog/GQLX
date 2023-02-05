@@ -46,6 +46,12 @@ TagManager:
   - name: Map
     uniqueID: 2140157489
     locked: 0
+  - name: Plants
+    uniqueID: 1237930103
+    locked: 0
+  - name: Event
+    uniqueID: 3069151021
+    locked: 0
   - name: Player
     uniqueID: 305331441
     locked: 0
