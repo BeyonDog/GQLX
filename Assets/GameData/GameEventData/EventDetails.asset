@@ -13,66 +13,6 @@ MonoBehaviour:
   m_Name: EventDetails
   m_EditorClassIdentifier: 
   gameEventDetails:
-  - eventID: SJ#0101
-    eventName: "\u7834\u65E7\u57CE\u5821"
-    description:
-    - "\u4E00\u5EA7\u9634\u68EE\u7684\u53E4\u5821\uFF0C\u95E8\u53E3\u5927\u95E8\u5DF2\u7ECF\u9508\u8FF9\u6591\u6591\uFF0C\u4F46\u4ECD\u7136\u975E\u5E38\u575A\u56FA\u3002"
-    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
-    image: {fileID: -454015765, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
-    option:
-    - optionType: 2
-      optionText: "\u649E\u5F00\u5927\u95E8"
-      attributeValue: 5
-      winText: "\u649E\u5F00\u4E86\u5927\u95E8"
-      winEventID: 0101
-      deText: "\u626D\u4F24\u4E86\u624B"
-      deEventID: 0102
-    - optionType: 1
-      optionText: "\u5C1D\u8BD5\u5F00\u9501"
-      attributeValue: 6
-      winText: "\u6253\u5F00\u4E86\u5927\u95E8"
-      winEventID: 0101
-      deText: "\u54CD\u52A8\u5F15\u6765\u4E86\u602A\u7269"
-      deEventID: 0103
-    - optionType: 2
-      optionText: "\u89C2\u5BDF\u56DB\u5468"
-      attributeValue: 5
-      winText: "\u53D1\u73B0\u4E86\u5176\u4ED6\u5165\u53E3"
-      winEventID: 0104
-      deText: "\u4EC0\u4E48\u4E5F\u6CA1\u6709\u53D1\u751F"
-      deEventID: 0105
-  - eventID: SJ#0102
-    eventName: "\u77FF\u5751"
-    description:
-    - "\u4F60\u8FDB\u5165\u4E86\u4E00\u5EA7\u5E9F\u5F03\u7684\u77FF\u5751\uFF0C\u4F60\u6CBF\u7740\u873F\u8712\u72ED\u7A84\u7684\u77FF\u9053\u4E00\u8DEF\u6DF1\u5165\u5730\u4E0B\u3002"
-    - "\u7A81\u7136\uFF0C\u5927\u5730\u5F00\u59CB\u4E0D\u4F4F\u5730\u98A4\u6296\uFF0C\u4F34\u968F\u9707\u8033\u6B32\u804B\u7684\u8F70\u9E23\u3002"
-    - "\u4F60\u770B\u89C1\u80CC\u540E\u6709\u4E00\u5757\u5DE8\u77F3\u6B63\u6CBF\u7740\u6765\u65F6\u7684\u671D\u4F60\u98DE\u5FEB\u6EDA\u6765\u3002"
-    - "\u4F60\u4E00\u8DEF\u5411\u524D\u72C2\u5954\uFF0C\u4E07\u5E78\uFF0C\u5728\u4F53\u529B\u5FEB\u8981\u900F\u652F\u4E4B\u524D\uFF0C\u5DE8\u77F3\u88AB\u9010\u6E10\u53D8\u7A84\u7684\u77FF\u9053\u5361\u4F4F\u4E86\uFF0C\u4E0D\u518D\u524D\u8FDB\u3002"
-    - "\u4F46\u6B64\u65F6\uFF0C\u4F60\u4E5F\u5DF2\u7ECF\u8D70\u5230\u4E86\u77FF\u9053\u7684\u5C3D\u5934\uFF0C\u800C\u80CC\u540E\u7684\u9000\u8DEF\u4E5F\u88AB\u5DE8\u77F3\u5835\u4F4F\u4E86"
-    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
-    image: {fileID: 562877770, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
-    option:
-    - optionType: 0
-      optionText: "\u63A8\u5F00\u5DE8\u77F3"
-      attributeValue: 6
-      winText: "\u77F3\u5934\u88AB\u63A8\u5F00\u4E86"
-      winEventID: 0201
-      deText: "\u5DE8\u77F3\u7EB9\u4E1D\u4E0D\u52A8"
-      deEventID: 0202
-    - optionType: 1
-      optionText: "\u4ECE\u7F1D\u9699\u94BB\u8FC7"
-      attributeValue: 5
-      winText: "\u901A\u8FC7\u4E86\u7F1D\u9699"
-      winEventID: 0203
-      deText: "\u64E6\u4F24\u4E86\u624B\u81C2"
-      deEventID: 0204
-    - optionType: 2
-      optionText: "\u7528\u6760\u6746\u539F\u7406"
-      attributeValue: 5
-      winText: "\u64AC\u5F00\u4E86\u5DE8\u77F3"
-      winEventID: 0206
-      deText: "\u6760\u6746\u65AD\u4E86"
-      deEventID: 0206
   - eventID: "\u767D\u5B50"
     eventName: "\u662F\u767D\u5B50\u54E6\uFF01"
     description:
@@ -107,6 +47,128 @@ MonoBehaviour:
       deEventID: 
     - optionType: 3
       optionText: "\u63C9\u63C9\u767D\u5B50"
+      attributeValue: 0
+      winText: 
+      winEventID: 
+      deText: 
+      deEventID: 
+  - eventID: SJ#0101
+    eventName: "\u5730\u9762\u7684\u72FC\u9AA8"
+    description:
+    - "\u607C\u4EBA\u7684\u98CE\u6C99\u3001\u707C\u773C\u7684\u9633\u5149\u3001\u5730\u4E0A\u7684\u72FC\u5934\u9AA8\u3002\u6BCF\u4E00\u6837\u90FD\u7CDF\u900F\u4E86\uFF01"
+    - "\u7B49\u7B49\uFF0C\u5934\u9AA8\uFF1F"
+    - "\u770B\u4E0A\u53BB\u548C\u6211\u7684\u8111\u888B\u5DEE\u4E0D\u591A\u5927\uFF0C\u8981\u4E0D\u7528\u5B83\u62B5\u5FA1\u4E00\u4E0B\u773C\u524D\u7684\u6C99\u5B50"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: -454015765, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u6361\u8D77\u5934\u9AA8"
+      attributeValue: 0
+      winText: "\u72FC\u5934\u9AA8\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      winEventID: 0101
+      deText: "\u72FC\u5934\u9AA8\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      deEventID: 0101
+    - optionType: 1
+      optionText: "\u867D\u7136\u521A\u9192\uFF0C\u4F46\u6361\u4E2A\u4E1C\u897F\u8FD8\u662F\u4E09\u4E24\u4E0B\u7684\u4E8B"
+      attributeValue: 0
+      winText: "\u72FC\u5934\u9AA8\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      winEventID: 
+      deText: "\u72FC\u5934\u9AA8\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      deEventID: 
+    - optionType: 2
+      optionText: "\u6211\u60F3\u6211\u9700\u8981\u8FD9\u4E2A"
+      attributeValue: 0
+      winText: "\u72FC\u5934\u9AA8\u6234\u7740\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      winEventID: 
+      deText: "\u72FC\u5934\u9AA8\u6234\u7740\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      deEventID: 
+    - optionType: 3
+      optionText: "\uFF08\u60F3\u4E5F\u4E0D\u60F3\u5C31\u6234\u4E0A\uFF09"
+      attributeValue: 0
+      winText: "\u72FC\u5934\u9AA8\u6234\u7740\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      winEventID: 
+      deText: "\u72FC\u5934\u9AA8\u6234\u7740\u5341\u5206\u5F97\u5408\u8138\uFF0C\u8BA9\u4F60\u653E\u677E\u4E86\u4E00\u70B9"
+      deEventID: 
+  - eventID: SJ#0102
+    eventName: "\u8BBE\u6CD5\u8FDB\u5165\u5730\u4E0B\u7814\u7A76\u6240"
+    description:
+    - "\u8FD9\u5C31\u662F\u5C0F\u5FB7\u8BF4\u7684\u5730\u65B9\uFF0C\u6211\u600E\u4E48\u8FDB\u53BB\u5462"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 562877770, guid: 05f072a9b020c47e581608971cc7392d, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u7528\u86EE\u529B\u64AC\u5F00\u5C0F\u5FB7\u94BB\u8FC7\u7684\u5165\u53E3"
+      attributeValue: 2
+      winText: "\u64AC\u5F00\u4E86\u4E00\u4E2A\u521A\u597D\u591F\u6211\u8FDB\u53BB\u7684\u6D1E"
+      winEventID: 
+      deText: "\u7528\u4E0A\u72D7\u5228\u7684\u529B\u91CF\u4E5F\u6CA1\u6709\u64AC\u5F00"
+      deEventID: 
+    - optionType: 1
+      optionText: "\u51B2\u523A\u649E\u5411\u5165\u53E3"
+      attributeValue: 2
+      winText: "\u6781\u5FEB\u7684\u901F\u5EA6\u6210\u529F\u649E\u5F00\u4E86\u5165\u53E3"
+      winEventID: 
+      deText: "\u901F\u5EA6\u4E0D\u591F"
+      deEventID: 
+    - optionType: 2
+      optionText: "\u5165\u53E3\u5904\u7684\u7F3A\u53E3\u4F3C\u4E4E\u53EF\u4EE5\u5D4C\u5165\u4EC0\u4E48\u4E1C\u897F"
+      attributeValue: 2
+      winText: "\u628A\u9879\u5708\u4E0A\u7684\u77F3\u5934\u5D4C\u5165\u540E\uFF0C\u95E8\u7ADF\u7136\u771F\u7684\u6253\u5F00\u4E86"
+      winEventID: 
+      deText: "\u628A\u82B1\u653E\u5165\u7F3A\u53E3\uFF0C\u95E8\u6CA1\u6709\u5F00"
+      deEventID: 
+    - optionType: 2
+      optionText: "\u968F\u4FBF\u6572\u4E86\u6572\u5927\u95E8\u7684\u9501"
+      attributeValue: 2
+      winText: "\u4E00\u9635\u706B\u82B1\uFF0C\u95E8\u5F00\u4E86"
+      winEventID: 
+      deText: "\u5927\u95E8\u4F9D\u65E7\u7D27\u95ED"
+      deEventID: 
+  - eventID: SJ#0103
+    eventName: "\u795E\u79D8\u7684\u8BBE\u5907"
+    description:
+    - "\u4F3C\u4E4E\u6709\u548C\u6211\u7684\u7EF4\u751F\u88C5\u7F6E\u7C7B\u4F3C\u7684\u8BBE\u5907."
+    - "\u6B63\u597D\u6211\u73B0\u5728\u9700\u8981\u8425\u517B\uFF0C\u628A\u9488\u7BA1\u8FDE\u4E0A\u5427"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u6309\u4E0B\u7EA2\u8272\u6309\u94AE"
+      attributeValue: 0
+      winText: "\u611F\u89C9\u5230\u529B\u91CF\u63D0\u5347\u4E86"
+      winEventID: 0101
+      deText: "\u611F\u89C9\u5230\u529B\u91CF\u63D0\u5347\u4E86"
+      deEventID: 0101
+    - optionType: 1
+      optionText: "\u6309\u4E0B\u84DD\u8272\u6309\u94AE"
+      attributeValue: 0
+      winText: "\u611F\u89C9\u5230\u901F\u5EA6\u63D0\u5347\u4E86"
+      winEventID: 0102
+      deText: "\u611F\u89C9\u5230\u901F\u5EA6\u63D0\u5347\u4E86"
+      deEventID: 0102
+    - optionType: 0
+      optionText: "\u6309\u4E0B\u7EFF\u8272\u6309\u94AE"
+      attributeValue: 0
+      winText: "\u611F\u89C9\u5230\u601D\u7EF4\u53D8\u5F97\u6D3B\u8DC3"
+      winEventID: 0103
+      deText: "\u611F\u89C9\u5230\u601D\u7EF4\u53D8\u5F97\u6D3B\u8DC3"
+      deEventID: 0103
+    - optionType: 3
+      optionText: "\u6309\u4E0B\u9EC4\u8272\u6309\u94AE"
+      attributeValue: 0
+      winText: "\u611F\u89C9\u5230\u52A8\u7269\u672C\u80FD\u88AB\u653E\u5927\uFF0C\u672C\u80FD+1"
+      winEventID: 0104
+      deText: "\u611F\u89C9\u5230\u52A8\u7269\u672C\u80FD\u88AB\u653E\u5927\uFF0C\u672C\u80FD+1"
+      deEventID: 0104
+  - eventID: SJ#0104
+    eventName: "\u4EBA\u7C7B\u6587\u5B57\u7684\u4FE1\u606F"
+    description:
+    - "\u6B63\u597D\u6211\u73B0\u5728\u9700\u8981\u8425\u517B\uFF0C\u628A\u9488\u7BA1\u8FDE\u4E0A\u5427"
+    sprite: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    image: {fileID: 21300000, guid: 98f033bee5483bf489ff91eacd5e4c25, type: 3}
+    option:
+    - optionType: 0
+      optionText: "\u5B57\u770B\u4E0D\u592A\u61C2\uFF0C\u4F46\u4ED6\u4EEC\u6807\u8BB0\u4E86\u6B63\u5317\u65B9\u5411\u7684\u4E00\u5904\u5730\u70B9\uFF0C\u4F3C\u4E4E\u5728\u90A3\u7814\u7A76\u8FC7\u4EC0\u4E48\u4E1C\u897F\uFF0C\u53BB\u770B\u770B\u5427"
       attributeValue: 0
       winText: 
       winEventID: 
