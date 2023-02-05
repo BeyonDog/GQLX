@@ -66,11 +66,19 @@ public class PlayerMove : MonoBehaviour
     {
         if(Input.GetAxisRaw("Vertical") == 1)
         {
-            anim.SetFloat("ToporDown", 1f);
+            anim.SetFloat("TopDown", 1);
         }
         if(Input.GetAxisRaw("Vertical") == -1)
         {
-            anim.SetFloat("ToporDown", -1f);
+            anim.SetFloat("TopDown", -1);
+        }
+        if(Input.GetAxisRaw("Horizontal") == 1)
+        {
+            anim.SetFloat("RightLeft", 1);
+        }
+        if(Input.GetAxisRaw("Horizontal") == -1)
+        {
+            anim.SetFloat("RightLeft", -1);
         }
     }
 }
