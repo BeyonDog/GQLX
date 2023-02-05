@@ -125,7 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEventID: 
+  endHeader: 
   endText: 
+  endSprite: {fileID: 0}
   isFind: 0
   isEnd: 0
 --- !u!1 &8927842604651850197
