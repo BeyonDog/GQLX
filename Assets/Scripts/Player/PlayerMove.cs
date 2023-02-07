@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimationController();
+        //AnimationController();
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
         if(Vector3.Distance(transform.position,movePoint.position) <= 0.4f)
         {
@@ -46,31 +46,11 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
-        //InputSection();
+        
     }
-    void FixedUpdate() 
-    {
-        //Playermove();
-    }
-    private void Playermove()
-    {
-        //rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-    }
-    private void InputSection()
-    {
-        //movex = Input.GetAxisRaw("Horizontal");
-        //movey = Input.GetAxisRaw("Vertical");
-        //moveDirection = new Vector2(movex, movey).normalized;
-    }
-    private void AnimationController()
-    {
-        if(Input.GetAxisRaw("Vertical") == 1)
-        {
-            anim.SetFloat("ToporDown", 1f);
-        }
-        if(Input.GetAxisRaw("Vertical") == -1)
-        {
-            anim.SetFloat("ToporDown", -1f);
-        }
-    }
-}
+    
+    
+   
+        
+    
+ }
