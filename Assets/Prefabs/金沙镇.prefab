@@ -229,9 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8d1a719d69f844f9a0e72c8ddc1e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEventID: 
+  gameEventID: '#SJ0102'
   endHeader: 
   endText: 
   endSprite: {fileID: 0}
-  isFind: 0
+  isFind: 1
   isEnd: 0

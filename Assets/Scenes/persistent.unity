@@ -811,7 +811,7 @@ MonoBehaviour:
   readonlyMode: 0
   activeSettings:
     name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -820,7 +820,7 @@ MonoBehaviour:
     type: json
   allSettings:
   - name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -1387,7 +1387,7 @@ MonoBehaviour:
   readonlyMode: 0
   activeSettings:
     name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -1396,7 +1396,7 @@ MonoBehaviour:
     type: json
   allSettings:
   - name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -116770,6 +116770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 362846832810818072, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 438150699875163071, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -116814,9 +116818,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 618387119961147519, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157561713157222572, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186136240833417530, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: isFind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2186136240833417530, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: gameEventID
+      value: '#SJ0102'
+      objectReference: {fileID: 0}
     - target: {fileID: 2966902724135354293, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
       propertyPath: m_Name
       value: "\u91D1\u6C99\u9547"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683238331257430080, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683238331257430080, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683238331257430080, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834379723645313359, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 219a5286fb87994419e6e537fd8dbaaa, type: 3}
