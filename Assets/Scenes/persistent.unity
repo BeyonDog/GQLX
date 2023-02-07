@@ -914,7 +914,7 @@ MonoBehaviour:
     fontStyleOptions: 0
     fontSize: 15
     fontColor: {r: 1, g: 1, b: 1, a: 1}
-    dropShadow: 0
+    dropShadow: 1
 --- !u!4 &465438372
 Transform:
   m_ObjectHideFlags: 0
@@ -111675,7 +111675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c17d5886c6d7924492ff125ea9bf9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 1.5
   movePoint: {fileID: 353459000}
   whatStopsMovement:
     serializedVersion: 2
@@ -111749,7 +111749,7 @@ MonoBehaviour:
   readonlyMode: 0
   activeSettings:
     name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -111758,7 +111758,7 @@ MonoBehaviour:
     type: json
   allSettings:
   - name: Default
-    id: c757c9f1-647b-4f52-966b-b1cc4eb602ee
+    id: 13cf3d2e-b05d-481d-8efa-a51f120ab5ff
     skin: Default
     fileName: Default
     redistributable: 0
@@ -121363,7 +121363,7 @@ MonoBehaviour:
     fontStyleOptions: 0
     fontSize: 18
     fontColor: {r: 1, g: 1, b: 1, a: 1}
-    dropShadow: 0
+    dropShadow: 1
 --- !u!4 &1805266396
 Transform:
   m_ObjectHideFlags: 0
